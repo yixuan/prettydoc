@@ -209,23 +209,31 @@ em {
 
 table {
   width: 100%;
-  border: 1px solid #ebebeb;
+  margin: 20px auto;
+}
+
+th, td {
+  border-bottom: 1px solid #bbbbbb;
+  text-align: left;
+  padding: 10px;
 }
 
 th {
-  font-weight: 500;
+  background-color: #a2000a;
+  color: white;
 }
 
-td {
-  border: 1px solid #ebebeb;
-  text-align: center;
-  font-weight: 300;
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 form {
   background: #f2f2f2;
   padding: 20px;
-
 }
 
 
