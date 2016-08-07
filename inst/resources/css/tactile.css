@@ -1,37 +1,29 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(fonts/open-sans-400.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/open-sans-700.woff2) format('woff2');
+}
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
 }
 blockquote, q {
 	quotes: none;
@@ -48,12 +40,12 @@ table {
 
 /* LAYOUT STYLES */
 body {
-  font-size: 1em;
-  line-height: 1.5; 
-  background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #e7e7e7 url('images/body-bg.png') 0 0 repeat;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-  color: #6d6d6d;
+  color: #606060;
 }
 
 a {
@@ -66,32 +58,44 @@ a:hover {
 header {
   padding-top: 35px;
   padding-bottom: 25px;
+  text-align: center;
 }
 
 header h1 {
-  font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; font-weight: 900;
+  font-weight: 700;
   letter-spacing: -1px;
-  font-size: 48px;
+  font-size: 2.2em;
   color: #303030;
   line-height: 1.2;
+  margin-bottom: 0.5em;
 }
 
 header h2 {
   letter-spacing: -1px;
-  font-size: 24px;
+  font-size: 1.5em;
   color: #aaa;
   font-weight: normal;
   line-height: 1.3;
+  margin-bottom: 1em;
+}
+
+header h3 {
+  letter-spacing: -1px;
+  font-size: 1.2em;
+  color: #6d6d6d;
+  font-weight: normal;
+  line-height: 1.2;
 }
 
 #container {
-  background: transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
+  background: transparent url('images/highlight-bg.jpg') 50% 0 no-repeat;
   min-height: 595px;
 }
 
 .inner {
-  width: 620px;
+  width: 850px;
   margin: 0 auto;
+  font-size: 1.1em;
 }
 
 #container .inner img {
@@ -104,7 +108,7 @@ header h2 {
 
 a.button {
   -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;                     
+  -webkit-border-radius: 30px;
   border-radius: 30px;
   border-top: solid 1px #cbcbcb;
   border-left: solid 1px #b7b7b7;
@@ -118,7 +122,7 @@ a.button {
   display: block;
   float: left;
   width: 179px;
-  margin-right: 14px;  
+  margin-right: 14px;
   background: #fdfdfd; /* Old browsers */
   background: -moz-linear-gradient(top,  #fdfdfd 0%, #f2f2f2 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
@@ -152,24 +156,11 @@ a.button span {
   height: 23px;
 }
 
-#download-zip span {
-  background: transparent url(../images/zip-icon.png) 12px 50% no-repeat;
-}
-#download-tar-gz span {
-  background: transparent url(../images/tar-gz-icon.png) 12px 50% no-repeat;
-}
-#view-on-github span {
-  background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat;
-}
-#view-on-github {
-  margin-right: 0;
-}
-
 code, pre {
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
+  font-family: Consolas, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, Courier, monospace;
   color: #222;
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 1em;
 }
 
 code {
@@ -180,14 +171,14 @@ code {
 
 pre {
   padding: 20px;
-  background: #303030;
-  color: #f2f2f2;
+  background: #f2f2f2;
+  color: #303030;
   text-shadow: none;
   overflow: auto;
 }
 pre code {
-  color: #f2f2f2;
-  background-color: #303030;
+  color: #303030;
+  background-color: #f2f2f2;
   border: none;
   padding: 0;
 }
@@ -205,7 +196,7 @@ hr {
   margin-top: 1em;
   padding-bottom: 1em;
   border: none;
-  background: transparent url('../images/hr.png') 50% 0 no-repeat;
+  background: transparent url('images/hr.png') 50% 0 no-repeat;
 }
 
 strong {
@@ -227,83 +218,79 @@ th {
 
 td {
   border: 1px solid #ebebeb;
-  text-align: center; 
+  text-align: center;
   font-weight: 300;
 }
 
 form {
   background: #f2f2f2;
   padding: 20px;
-  
+
 }
 
 
 /* GENERAL ELEMENT TYPE STYLES */
 
 h1 {
-  font-size: 32px;
-} 
+  font-size: 2em;
+}
 
 h2 {
-  font-size: 22px;
+  font-size: 1.5em;
   font-weight: bold;
   color: #303030;
   margin-bottom: 8px;
-} 
+}
 
 h3 {
   color: #d5000d;
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 8px;
-} 
- 
+}
+
 h4 {
-  font-size: 16px;
+  font-size: 1.1em;
   color: #303030;
   font-weight: bold;
-} 
+  margin-bottom: 8px;
+}
 
 h5 {
   font-size: 1em;
   color: #303030;
-} 
+  margin-bottom: 8px;
+}
 
 h6 {
-  font-size: .8em;
+  font-size: 0.9em;
   color: #303030;
-} 
+  margin-bottom: 8px;
+}
 
 p {
-  font-weight: 300;
+  font-weight: normal;
   margin-bottom: 20px;
 }
- 
+
 a {
   text-decoration: none;
 }
 
 p a {
-  font-weight: 400;
+  font-weight: normal;
 }
 
 blockquote {
-  font-size: 1.6em;
-  border-left: 10px solid #e9e9e9;
+  font-size: 1.2em;
+  border-left: 10px solid #d0d0d0;
   margin-bottom: 20px;
   padding: 0 0 0 30px;
 }
 
-ul li {
-  list-style-position: inside;
-  list-style: disc;
-  padding-left: 20px;
-}
-
-ol li {
-  list-style-position: inside;
-  list-style: decimal;
-  padding-left: 3px;
+ol, ul {
+	list-style-position: inside;
+    padding-left: 2em;
 }
 
 dl dt {
@@ -311,7 +298,7 @@ dl dt {
 }
 
 footer {
-  background: transparent url('../images/hr.png') 0 0 no-repeat;
+  background: transparent url('images/hr.png') 0 0 no-repeat;
   margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 30px;
