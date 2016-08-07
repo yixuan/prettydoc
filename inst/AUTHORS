@@ -1,10 +1,12 @@
-The CSS file of the Cayman theme was modified from the work of Jason Long
-(https://github.com/jasonlong/cayman-theme).
+The CSS and image files of the Cayman, Tactile and Architect themes were
+modified from the work of Jason Long (https://github.com/jasonlong/).
 
-The template file of the Cayman theme was modified from the default template
+The pandoc template files were modified from the default template
 in rmarkdown package, written by JJ Allaire.
 
 The html_pretty() function was derived from the html_vignette() function in
 rmarkdown package, written by Hadley Wickham and Yihui Xie.
+
+The Open Sans font files included were designed by Steve Matteson.
 
 Other part of the package was written by Yixuan Qiu.

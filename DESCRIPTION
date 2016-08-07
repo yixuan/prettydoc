@@ -11,12 +11,17 @@ Authors@R: c(
     person("Hadley", "Wickham", , "h.wickham@gmail.com", "ctb",
            comment = "the html_vignette() function"),
     person("Yihui", "Xie", , "xie@yihui.name", "ctb",
-           comment = "the html_vignette() function")
+           comment = "the html_vignette() function"),
+    person("Steve", "Matteson", role = "ctb",
+           comment = "the Open Sans fonts")
     )
 Description: Creating tiny yet beautiful documents and vignettes from R
     Markdown.
 Imports:
     rmarkdown (>= 1.0)
+Suggests:
+    knitr
+VignetteBuilder: knitr
 URL: https://github.com/yixuan/prettydoc
 BugReports: https://github.com/yixuan/prettydoc/issues
 License: Apache License (>= 2.0)
