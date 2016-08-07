@@ -1,0 +1,185 @@
+---
+title: "Creating Pretty Documents From R Markdown"
+subtitle: "The Cayman Theme"
+author: "Yixuan Qiu"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+vignette: >
+  %\VignetteIndexEntry{Creating Pretty Documents From R Markdown - Cayman}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+> Have you ever tried to find a lightweight yet nice theme for the R Markdown
+documents, just like this page?
+
+## Themes for R Markdown
+
+With the powerful `rmarkdown` package, we could easily create nice HTML document
+by adding some meta information in the header, for example
+
+```yaml
+---
+title: Nineteen Years Later
+author: Harry Potter
+date: July 31, 2016
+output:
+  rmarkdown::html_document:
+    theme: lumen
+---
+```
+
+The `html_document` engine uses the [Bootswatch](http://bootswatch.com/)
+theme library to support different styles of the document.
+This is a quick and easy way to tune the appearance of your document, yet with
+the price of a large file size (> 700KB) since the whole
+[Bootstrap](http://getbootstrap.com/) library needs to be packed in.
+
+For package vignettes, we can use the `html_vignette` engine to generate
+a more lightweight HTML file that is meant to minimize the package size, but
+the output HTML is less stylish than the `html_document` ones.
+
+So can we do **BOTH**, a lightweight yet nice-looking theme for R Markdown?
+
+## The prettydoc Engine
+
+The answer is YES! (At least towards that direction)
+
+The `prettydoc` package provides an alternative engine, `html_pretty`,
+to knit your R Markdown document into pretty HTML pages.
+Its usage is extremely easy: simply replace the
+`rmarkdown::html_document` or `rmarkdown::html_vignette` output engine by
+`prettydoc::html_pretty` in your R Markdown header, and use one of the built-in
+themes and syntax highlighters. For example
+
+```yaml
+---
+title: Nineteen Years Later
+author: Harry Potter
+date: July 31, 2016
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+```
+
+## Options and Themes
+
+The options for the `html_pretty` engine are fully compatible with the default
+`html_document`
+(see the [documentation](http://rmarkdown.rstudio.com/html_document_format.html))
+with two exceptions:
+
+1. The `theme` option can take value from `cayman`, `tactile` and
+`architect`. More themes will be added in the future. The themes contained in
+`prettydoc` are much inspired by and modified from
+various [Github page themes](https://github.com/blog/1081-instantly-beautiful-project-pages).
+2. The `highlight` options takes value from `github` and `vignette`.
+
+## Elements
+
+We demonstrate some commonly used HTML elements here to show the apprearance of
+themes.
+
+### Headers
+
+#### Level 4
+
+##### Level 5
+
+
+### Tables
+
+|           | Df | Sum Sq | Mean Sq | F value | Pr(>F)  |    |
+|-----------|----|--------|---------|---------|---------|----|
+| Block     | 5  | 343.3  | 68.66   | 4.447   | 0.01594 | *  |
+| N         | 1  | 189.3  | 189.28  | 12.259  | 0.00437 | ** |
+| P         | 1  | 8.4    | 8.40    | 0.544   | 0.47490 |    |
+| K         | 1  | 95.2   | 95.20   | 6.166   | 0.02880 | *  |
+| N:P       | 1  | 21.3   | 21.28   | 1.378   | 0.26317 |    |
+| N:K       | 1  | 33.1   | 33.14   | 2.146   | 0.16865 |    |
+| P:K       | 1  | 0.5    | 0.48    | 0.031   | 0.86275 |    |
+| Residuals | 12 | 185.3  | 15.44   |         |         |    |
+
+
+### Lists
+
+There are three kinds of lies:
+
+1. Lies
+2. Damned lies
+3. Statistics
+    - Frequentists
+    - Bayesian
+    - ...
+
+Supported highlighters in `prettydoc`:
+
+- `github`: Style similar to Github
+- `vignette`: Style used by `rmarkdown::html_vignette`
+
+
+### Markups
+
+**Bold**, *italic*, <del>don't say this</del>.
+
+
+### Code
+
+Familiar `knitr` R code and plots:
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+set.seed(123)
+n <- 1000
+x1  <- matrix(rnorm(n), ncol = 2)
+x2  <- matrix(rnorm(n, mean = 3, sd = 1.5), ncol = 2)
+x   <- rbind(x1, x2)
+smoothScatter(x, xlab = "x1", ylab = "x2")
+head(x)
+```
+
+Also try some other languages, for example C++.
+
+```cpp
+// [[Rcpp::depends(RcppEigen)]]
+// [[Rcpp::depends(RcppNumerical)]]
+
+#include <RcppNumerical.h>
+
+using namespace Numer;
+
+// f = 100 * (x2 - x1^2)^2 + (1 - x1)^2
+// True minimum: x1 = x2 = 1
+class Rosenbrock: public MFuncGrad
+{
+public:
+    double f_grad(Constvec& x, Refvec grad)
+    {
+        double t1 = x[1] - x[0] * x[0];
+        double t2 = 1 - x[0];
+        grad[0] = -400 * x[0] * t1 - 2 * t2;
+        grad[1] = 200 * t1;
+        return 100 * t1 * t1 + t2 * t2;
+    }
+};
+
+// [[Rcpp::export]]
+Rcpp::List optim_test()
+{
+    Eigen::VectorXd x(2);
+    x[0] = -1.2;
+    x[1] = 1;
+    double fopt;
+    Rosenbrock f;
+    int res = optim_lbfgs(f, x, fopt);
+    return Rcpp::List::create(
+        Rcpp::Named("xopt") = x,
+        Rcpp::Named("fopt") = fopt,
+        Rcpp::Named("status") = res
+    );
+}
+```
