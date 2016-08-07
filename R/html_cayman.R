@@ -1,9 +1,9 @@
 html_pretty <- function(theme = "cayman",
                         highlight = NULL,
                         css = NULL,
+                        fig_retina = NULL,
                         keep_md = FALSE,
                         readme = FALSE,
-                        hl_style = NULL,
                         ...) {
 
     ## Directories for resources
@@ -69,7 +69,7 @@ html_pretty <- function(theme = "cayman",
         ## the HTML document tiny
         ## The real `theme` and `highlight` passed to html_pretty() are
         ## reflected in the final CSS file
-        base_format = rmarkdown::html_document(fig_retina = NULL,
+        base_format = rmarkdown::html_document(fig_retina = fig_retina,
                                                css = final_css,
                                                theme = NULL,
                                                highlight = "pygments",
