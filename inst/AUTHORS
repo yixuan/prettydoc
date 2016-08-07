@@ -1,0 +1,10 @@
+The CSS file of the Cayman theme was modified from the work of Jason Long
+(https://github.com/jasonlong/cayman-theme).
+
+The template file of the Cayman theme was modified from the default template
+in rmarkdown package, written by JJ Allaire.
+
+The html_pretty() function was derived from the html_vignette() function in
+rmarkdown package, written by Hadley Wickham and Yihui Xie.
+
+Other part of the package was written by Yixuan Qiu.
