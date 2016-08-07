@@ -6,6 +6,19 @@
  *    user zoom.
  */
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(fonts/open-sans-400.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/open-sans-700.woff2) format('woff2');
+}
+
 html {
   font-family: sans-serif; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -428,8 +441,8 @@ th {
 
 /* LAYOUT STYLES */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 15px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #666;
@@ -449,30 +462,38 @@ a:hover {
 
 header {
   padding-top: 40px;
-  padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  padding-bottom: 20px;
   background: #2e7bcf url(images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
+  text-align: center;
 }
 
 header h1 {
-  width: 540px;
   margin-top: 0;
-  margin-bottom: 0.2em;
-  font-size: 72px;
-  font-weight: normal;
+  margin-bottom: 0.5em;
+  font-size: 2.2em;
+  font-weight: bold;
   line-height: 1;
   color: #fff;
   letter-spacing: -1px;
 }
 
 header h2 {
-  width: 540px;
   margin-top: 0;
-  margin-bottom: 0;
-  font-size: 26px;
+  margin-bottom: 1em;
+  font-size: 1.5em;
   font-weight: normal;
   line-height: 1.3;
+  color: #9ddcff;
+  letter-spacing: 0;
+}
+
+header h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: normal;
+  line-height: 1.2;
   color: #9ddcff;
   letter-spacing: 0;
 }
@@ -480,6 +501,7 @@ header h2 {
 .inner {
   position: relative;
   width: 940px;
+  font-size: 1.1em;
   margin: 0 auto;
 }
 
@@ -488,19 +510,14 @@ header h2 {
   border-top: solid 1px #fff;
 }
 
-#main-content {
-  float: left;
-  width: 690px;
-}
-
 #main-content img {
   max-width: 100%;
 }
 
 code, pre {
   margin-bottom: 30px;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 13px;
+  font-family: Monaco, Consolas, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 1em;
   color: #222;
 }
 
@@ -541,17 +558,26 @@ hr {
 
 table {
   width: 100%;
-  border: 1px solid #ebebeb;
+  margin: 20px auto;
+}
+
+th, td {
+  border-bottom: 1px solid #bbbbbb;
+  text-align: left;
+  padding: 10px;
 }
 
 th {
-  font-weight: 500;
+  background-color: #63a0e1;
+  color: white;
 }
 
-td {
-  font-weight: 300;
-  text-align: center;
-  border: 1px solid #ebebeb;
+tr:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
 }
 
 form {
@@ -566,32 +592,28 @@ form {
 #main-content h1 {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 2.8em;
-  font-weight: normal;
+  font-size: 2em;
+  font-weight: bold;
   color: #474747;
-  text-indent: 6px;
   letter-spacing: -1px;
 }
 
 #main-content h1:before {
   padding-right: 0.3em;
-  margin-left: -0.9em;
+  margin-left: -0.8em;
   color: #9ddcff;
   content: "/";
 }
 
 #main-content h2 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 22px;
+  font-size: 1.5em;
   font-weight: bold;
   color: #474747;
-  text-indent: 4px;
 }
 #main-content h2:before {
   padding-right: 0.3em;
-  margin-left: -1.5em;
+  margin-left: -1.2em;
   content: "//";
   color: #9ddcff;
 }
@@ -599,60 +621,52 @@ form {
 #main-content h3 {
   margin-top: 24px;
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: bold;
   color: #474747;
-  text-indent: 3px;
 }
 
 #main-content h3:before {
   padding-right: 0.3em;
-  margin-left: -2em;
+  margin-left: -1.7em;
   content: "///";
   color: #9ddcff;
 }
 
 #main-content h4 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 15px;
+  font-size: 1.1em;
   font-weight: bold;
   color: #474747;
-  text-indent: 3px;
 }
 
 h4:before {
   padding-right: 0.3em;
-  margin-left: -2.8em;
+  margin-left: -2em;
   content: "////";
   color: #9ddcff;
 }
 
 #main-content h5 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 14px;
+  font-size: 1em;
   color: #474747;
-  text-indent: 3px;
 }
 h5:before {
   padding-right: 0.3em;
-  margin-left: -3.2em;
+  margin-left: -2.4em;
   content: "/////";
   color: #9ddcff;
 }
 
 #main-content h6 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: .8em;
+  font-size: 0.9em;
   color: #474747;
-  text-indent: 3px;
 }
 h6:before {
   padding-right: 0.3em;
-  margin-left: -3.7em;
+  margin-left: -3em;
   content: "//////";
   color: #9ddcff;
 }
@@ -672,20 +686,13 @@ p a {
 blockquote {
   padding: 0 0 0 30px;
   margin-bottom: 20px;
-  font-size: 1.6em;
+  font-size: 1.2em;
   border-left: 10px solid #e9e9e9;
 }
 
-ul {
+ul, ol {
   list-style-position: inside;
-  list-style: disc;
   padding-left: 20px;
-}
-
-ol {
-  list-style-position: inside;
-  list-style: decimal;
-  padding-left: 3px;
 }
 
 dl dd {
