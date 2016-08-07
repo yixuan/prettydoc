@@ -10,6 +10,7 @@ html_pretty <- function(theme = "cayman",
     css_dir  <- system.file("resources", "css",              package = "prettydoc")
     hl_dir   <- system.file("resources", "css", "highlight", package = "prettydoc")
     font_dir <- system.file("resources", "fonts",            package = "prettydoc")
+    img_dir  <- system.file("resources", "images",           package = "prettydoc")
     tmpl_dir <- system.file("resources", "templates",        package = "prettydoc")
 
     ## Obtain theme CSS
@@ -32,6 +33,7 @@ html_pretty <- function(theme = "cayman",
     final_css <- tempfile(fileext = ".css")
     file.copy(theme_css, final_css)
     file.copy(font_dir, tempdir(), recursive = TRUE)
+    file.copy(img_dir,  tempdir(), recursive = TRUE)
 
     ## Merge syntax highlight CSS
     if (!is.null(highlight)) {
