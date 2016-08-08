@@ -1,0 +1,77 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Vignettes are long form documentation commonly included in packages. Because
+they are part of the distribution of the package, they need to be as compact as
+possible. The `html_pretty` output format in package
+[**prettydoc**](http://github.com/yixuan/prettydoc/) , an alternative
+to `html_document` and `html_vignette` contained in the `rmarkdown` package,
+is able to generate small and nice HTML pages.
+
+## Styles
+
+Currently `html_pretty` supports three page themes, `cayman` (the default),
+`tactile`, and `architect`. And there are also two syntax highlight styles:
+`github` to mimic the syntax highlight on Github, and `vignette` that is used by
+`html_vignette`. If no highlight parameter is given, the default style created
+by Pandoc will be used.
+
+The theme and highlight styles can be given in the document metadata,
+for example:
+
+```yaml
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+```
+
+## Happy Knitting!
+
+Feel free to use the `knitr` infrastructure with dozens of tunable options in
+your package vignette.
+
+```{r fig.width=6, fig.height=6, fig.align='center'}
+set.seed(123)
+n <- 1000
+x1  <- matrix(rnorm(n), ncol = 2)
+x2  <- matrix(rnorm(n, mean = 3, sd = 1.5), ncol = 2)
+x   <- rbind(x1, x2)
+head(x)
+smoothScatter(x, xlab = "x1", ylab = "x2")
+```
+
+You can also include code snippets of languages other than R, but note that
+the block header has no curly brackets around the language name.
+
+```cpp
+// [[Rcpp::export]]
+NumericVector timesTwo(NumericVector x) {
+    return x * 2;
+}
+```
+
+You can write math expressions, e.g. $Y = X\beta + \epsilon$,
+footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(iris, 10))
+```
+
+## Stay Tuned
+
+Please visit the [development page](http://github.com/yixuan/prettydoc/) of the 
+`prettydoc` package for latest updates and news. Comments, bug reports and
+pull requests are always welcome.
+

@@ -1,0 +1,4 @@
+name: Lightweight and Pretty Document (HTML)
+description: >
+  Template to create HTML document using the prettydoc package.
+create_dir: false

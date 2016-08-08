@@ -1,0 +1,4 @@
+name: Lightweight and Pretty Vignette (HTML)
+description: >
+  Template to create package vignettes using the prettydoc package.
+create_dir: false
