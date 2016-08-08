@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-43536203-6', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div id="main">
+
+    <div id="header">
+
+      <div id="logo">
+        <h1><a href="#">pretty</a>doc</h1>
+        <div class="slogan">Creating Pretty Documents From R Markdown</div>
+      </div>
+      <!-- logo -->
+
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="current" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="current"><a href="index.html">Home</a></li>
+          <li><a href="examples.html">Gallery</a></li>
+          <li><a href="page.html">Source</a></li>
+        </ul>
+      </div> <!-- menubar -->
+
+    </div> <!-- header -->
+
+    <div id="site_content">
+      <div id="content">
+        <!-- insert the page content here -->
+        {{ content }}
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>&copy; Copyright 2016, Yixuan Qiu | Theme modified from <a href="http://www.html5webtemplates.co.uk/templates/simplestyle_7/index.html">simplestyle_7</a></p>
+    </div>
+
+  </div> <!-- main -->
+</body>
+
+</html>
