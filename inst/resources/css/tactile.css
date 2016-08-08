@@ -93,7 +93,7 @@ header h3 {
 }
 
 .inner {
-  width: 850px;
+  width: 840px;
   margin: 0 auto;
   font-size: 1.1em;
 }
@@ -125,6 +125,7 @@ pre {
 pre code {
   border: none;
   padding: 0;
+  font-size: 1em;
 }
 
 ul, ol, dl {
@@ -234,7 +235,8 @@ p a {
 }
 
 blockquote {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  color: #819198;
   border-left: 10px solid #d0d0d0;
   margin-bottom: 20px;
   padding: 0 0 0 30px;
@@ -277,3 +279,31 @@ footer a:hover {
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
+
+/* #Media Queries
+================================================== */
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 850px) {
+  header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  header h1 {
+    font-size: 1.75em;
+  }
+  header h2 {
+    font-size: 1.1em;
+  }
+  header h3 {
+  font-size: 0.9em;
+  }
+  .inner {
+    width: 94%;
+    font-size: 1em;
+    margin: 0 auto;
+  }
+  pre code {
+    font-size: 0.9em;
+  }
+}

@@ -341,7 +341,7 @@ header h3 {
 
 .inner {
   position: relative;
-  width: 940px;
+  width: 840px;
   font-size: 1.1em;
   margin: 0 auto;
 }
@@ -379,6 +379,7 @@ pre code {
   padding: 0;
   color: #2879d0;
   background-color: #fff;
+  font-size: 1em;
   border: none;
 }
 
@@ -503,7 +504,7 @@ p a {
 blockquote {
   padding: 0 0 0 30px;
   margin-bottom: 20px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   border-left: 10px solid #e9e9e9;
 }
 
@@ -529,3 +530,42 @@ dl dd {
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
+
+/* #Media Queries
+================================================== */
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 850px) {
+  .inner {
+    width: 93%;
+    font-size: 1em;
+  }
+  header {
+    padding: 10px 0;
+  }
+  header h1, header h2 {
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.75em;
+  }
+  header h2 {
+    font-size: 1.1em;
+  }
+  header h3 {
+    font-size: 0.9em;
+  }
+  pre code {
+    font-size: 0.9em;
+  }
+  #main-content h1:before,
+  #main-content h2:before,
+  #main-content h3:before,
+  #main-content h4:before,
+  #main-content h5:before,
+  #main-content h6:before {
+    padding-right: 0;
+    margin-left: 0;
+    content: none;
+  }
+}
