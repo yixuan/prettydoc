@@ -391,11 +391,12 @@ ul, ol, dl {
 /* COMMON STYLES */
 
 hr {
-  height: 0;
+  height: 1px;
   margin-top: 1em;
   margin-bottom: 1em;
   border: 0;
-  border-top: solid 1px #ddd;
+  background: #aaa;
+  background-image: linear-gradient(to right, #eee, #aaa, #eee);
 }
 
 form {
@@ -509,8 +510,7 @@ blockquote {
 }
 
 ul, ol {
-  list-style-position: inside;
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
 dl dd {

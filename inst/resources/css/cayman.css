@@ -174,8 +174,10 @@ a:hover {
 }
 .main-content hr {
   margin: 1rem 0;
-  background-color: #eff0f1;
   border: 0;
+  height: 1px;
+  background: #aaa;
+  background-image: linear-gradient(to right, #eee, #aaa, #eee);
 }
 .main-content {
   max-width: 64rem;
