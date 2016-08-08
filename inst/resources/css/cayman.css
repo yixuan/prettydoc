@@ -2,13 +2,13 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(fonts/open-sans-400.woff2) format('woff2');
+  src: local('Open Sans'), local('OpenSans'), url('fonts/open-sans-400.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/open-sans-700.woff2) format('woff2');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('fonts/open-sans-700.woff2') format('woff2');
 }
 * {
   box-sizing: border-box;
@@ -59,10 +59,10 @@ a:hover {
     font-size: 1.75rem;
   }
   .project-tagline {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .project-author, .project-date {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 .main-content:first-child {
@@ -83,7 +83,6 @@ a:hover {
 .main-content code {
   padding: 2px 4px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 1rem;
   color: #383e41;
   background-color: #f3f6fa;
   border-radius: 0.3rem;
@@ -98,6 +97,8 @@ a:hover {
   background-color: #f3f6fa;
   border: solid 1px #dce6f0;
   border-radius: 0.3rem;
+  line-height: 1.45;
+  overflow: auto;
 }
 .main-content pre> code {
   padding: 0;
@@ -109,26 +110,9 @@ a:hover {
   background: transparent;
   border: 0;
 }
-.main-content .highlight {
-  margin-bottom: 1rem;
-}
-.main-content .highlight pre {
-  margin-bottom: 0;
-  word-break: normal;
-}
-.main-content .highlight pre, .main-content pre {
-  padding: 0.8rem;
-  overflow: auto;
-  font-size: 1rem;
-  line-height: 1.45;
-  border-radius: 0.3rem;
-}
 .main-content pre code, .main-content pre tt {
   display: inline;
-  max-width: initial;
   padding: 0;
-  margin: 0;
-  overflow: initial;
   line-height: inherit;
   word-wrap: normal;
   background-color: transparent;
@@ -143,6 +127,7 @@ a:hover {
 .main-content blockquote {
   padding: 0 1rem;
   margin-left: 0;
+  font-size: 1.2rem;
   color: #819198;
   border-left: 0.3rem solid #dce6f0;
 }
@@ -208,8 +193,11 @@ a:hover {
     padding: 2rem 1rem;
     font-size: 1rem;
   }
-  .main-content pre> code {
+  .main-content pre, .main-content pre> code {
     font-size: 0.9rem;
+  }
+  .main-content blockquote {
+    font-size: 1.1rem;
   }
 }
 .site-footer {

@@ -6,36 +6,36 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(fonts/open-sans-400.woff2) format('woff2');
+  src: local('Open Sans'), local('OpenSans'), url('fonts/open-sans-400.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/open-sans-700.woff2) format('woff2');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('fonts/open-sans-700.woff2') format('woff2');
 }
 * {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* LAYOUT STYLES */
@@ -64,7 +64,7 @@ header {
 header h1 {
   font-weight: 700;
   letter-spacing: -1px;
-  font-size: 2.2em;
+  font-size: 2em;
   color: #303030;
   line-height: 1.2;
   margin-bottom: 0.5em;
@@ -120,12 +120,12 @@ pre {
   padding: 20px;
   text-shadow: none;
   overflow: auto;
+  font-size: 0.9em;
 }
 
 pre code {
   border: none;
   padding: 0;
-  font-size: 1em;
 }
 
 ul, ol, dl {
@@ -293,17 +293,14 @@ footer a:hover {
     font-size: 1.75em;
   }
   header h2 {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
   header h3 {
-  font-size: 0.9em;
+  font-size: 1em;
   }
   .inner {
     width: 94%;
     font-size: 1em;
     margin: 0 auto;
-  }
-  pre code {
-    font-size: 0.9em;
   }
 }
