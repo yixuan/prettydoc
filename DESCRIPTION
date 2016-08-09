@@ -16,7 +16,10 @@ Authors@R: c(
            comment = "the Open Sans fonts")
     )
 Description: Creating tiny yet beautiful documents and vignettes from R
-    Markdown.
+    Markdown. The package provides the 'html_pretty' output format as an
+    alternative to the 'html_document' and 'html_vignette' engines that
+    convert R Markdown into HTML pages. Various themes and syntax highlight
+    styles are supported.
 Imports:
     rmarkdown (>= 1.0)
 Suggests:
