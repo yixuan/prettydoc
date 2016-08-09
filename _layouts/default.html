@@ -27,7 +27,7 @@
     <div id="header">
 
       <div id="logo">
-        <h1><a href="#">pretty</a>doc</h1>
+        <h1><a href="index.html">pretty</a>doc</h1>
         <div class="slogan">Creating Pretty Documents From R Markdown</div>
       </div>
       <!-- logo -->
@@ -35,9 +35,9 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="current" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="current"><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Gallery</a></li>
-          <li><a href="page.html">Source</a></li>
+          <li {% if page.url == '/index.html' or page.url == '/' %} class="current" {% endif %}><a href="index.html">Home</a></li>
+          <li {% if page.url == '/themes.html' %} class="current" {% endif %}><a href="themes.html">Themes</a></li>
+          <li><a href="https://github.com/yixuan/prettydoc/">Source</a></li>
         </ul>
       </div> <!-- menubar -->
 
