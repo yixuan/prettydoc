@@ -25,7 +25,6 @@ body {
 p {
   margin-bottom: 20px;
   line-height: 1.5em;
-  font-size: 1.1em;
 }
 code, pre {
   color: #333;
@@ -35,6 +34,7 @@ pre {
   padding: 10px 15px;
   line-height: 1.5em;
   margin-bottom: 20px;
+  font-size: 0.9em;
 }
 p code {
   background-color: #f2f8fc;
@@ -196,6 +196,7 @@ ul#menu li a:hover {
   border: 1px solid #E7E7E7;
 }
 #content {
+  font-size: 1.1em;
   text-align: left;
   margin: 0;
 }
@@ -212,7 +213,6 @@ ul#menu li a:hover {
 #footer {
   clear: both;
   width: 100%;
-  height: 85px;
   font-weight: normal;
   font-size: 1.1em;
   padding: 50px 0 5px 0;
