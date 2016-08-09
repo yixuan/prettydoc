@@ -9,15 +9,15 @@ different themes.
 
 <div class="gallery">
   <h3>Cayman <a href="cayman.html">(Demo Page)</a></h3>
-  <img src="cayman.png" alt="Cayman Theme" />
+  <img src="images/cayman.png" alt="Cayman Theme" />
 </div>
 
 <div class="gallery">
   <h3>Tactile <a href="tactile.html">(Demo Page)</a></h3>
-  <img src="tactile.png" alt="Tactile Theme" />
+  <img src="images/tactile.png" alt="Tactile Theme" />
 </div>
 
 <div class="gallery">
   <h3>Architect <a href="architect.html">(Demo Page)</a></h3>
-  <img src="architect.png" alt="Architect Theme" />
+  <img src="images/architect.png" alt="Architect Theme" />
 </div>

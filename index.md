@@ -59,6 +59,20 @@ output:
 ---
 ```
 
+You can also create documents from **prettydoc** templates in RStudio.
+
+**Step 1:** Click the "New File" button and choose "R Markdown".
+
+<div class="gallery">
+  <img src="images/step1.png" alt="Step 1" />
+</div>
+
+**Step 2:** In the "From Template" tab, choose one of the built-in templates.
+
+<div class="gallery">
+  <img src="images/step2.png" alt="Step 2" />
+</div>
+
 ## Options and Themes
 
 The options for the `html_pretty` engine are fully compatible with the default
