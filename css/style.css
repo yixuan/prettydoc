@@ -245,3 +245,13 @@ table tr td {
   color: #111;
   border-top: 1px solid #FFF;
 }
+.gallery {
+  text-align: center;
+}
+.gallery h3 {
+  margin: 2em 0 1em;
+}
+.gallery img {
+  width: 90%;
+  max-width: 650px;
+}
