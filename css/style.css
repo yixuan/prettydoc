@@ -113,17 +113,20 @@ ol li {
   margin-right: auto;
 }
 #main {
-  width: 952px;
-  margin: 20px auto;
+  max-width: 952px;
+  margin: 0 auto;
+}
+.clearfix:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
 }
 #header {
-  width: 950px;
-  height: 145px;
+  min-height: 145px;
 }
 #logo {
-  width: 950px;
-  float: left;
-  height: 100px;
+  min-height: 100px;
   background: transparent;
 }
 #logo h1 {
@@ -254,4 +257,13 @@ table tr td {
 .gallery img {
   width: 90%;
   max-width: 650px;
+}
+@media screen and (max-width: 960px) {
+  #logo h1 { float: none; }
+  .slogan {
+    padding: 0 1em;
+    float: none;
+    margin-bottom: 1em;
+    text-align: center;
+  }
 }
