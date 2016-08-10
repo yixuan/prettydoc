@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_pretty.R
 \name{html_pretty}
 \alias{html_pretty}
-\title{Creating Pretty HTML From R Markdown}
+\title{Creating Pretty HTML from R Markdown}
 \usage{
 html_pretty(theme = "cayman", highlight = NULL, css = NULL,
   fig_retina = NULL, keep_md = FALSE, readme = FALSE, ...)

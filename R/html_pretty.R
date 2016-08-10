@@ -1,4 +1,4 @@
-#' Creating Pretty HTML From R Markdown
+#' Creating Pretty HTML from R Markdown
 #'
 #' This function is an alternative to the \code{\link[rmarkdown]{html_document}}
 #' and \code{\link[rmarkdown]{html_vignette}} formats to create HTML document

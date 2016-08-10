@@ -1,6 +1,6 @@
 Package: prettydoc
 Type: Package
-Title: Creating Pretty Documents From R Markdown
+Title: Creating Pretty Documents from R Markdown
 Version: 0.1.0
 Date: 2016-08-10
 Authors@R: c(
@@ -25,6 +25,7 @@ Imports:
     rmarkdown (>= 1.0)
 Suggests:
     knitr
+SystemRequirements: pandoc (>= 1.12.3)
 VignetteBuilder: knitr
 URL: https://github.com/yixuan/prettydoc
 BugReports: https://github.com/yixuan/prettydoc/issues
