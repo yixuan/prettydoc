@@ -1,9 +1,11 @@
 #' Creating Pretty HTML From R Markdown
 #'
 #' This function is an alternative to the \code{\link[rmarkdown]{html_document}}
-#' and \code{\link[rmarkdown]{html_vignette}} engines to create HTML document
+#' and \code{\link[rmarkdown]{html_vignette}} formats to create HTML document
 #' from R Markdown. It generates small yet pretty HTML pages that are suitable
 #' for publishing project pages and package vignettes.
+#' See the \href{http://yixuan.cos.name/prettydoc/}{online documentation}
+#' for more details.
 #'
 #' @param theme Character string to specify the document theme. Currently supported
 #'              themes are \code{"cayman"}, \code{"tactile"} and \code{"architect"}.
@@ -23,6 +25,12 @@
 #'
 #' @return R Markdown output format to pass to \code{\link[rmarkdown]{render}}.
 #' @author Yixuan Qiu <\url{http://statr.me}>
+#' @examples
+#' \dontrun{
+#' doc = system.file("rmarkdown", "templates", "html_pretty_vignette",
+#'                   "skeleton", "skeleton.Rmd", package = "prettydoc")
+#' rmarkdown::render(doc, html_pretty(), output_dir = tempdir())
+#' }
 #' @export
 #'
 #'
