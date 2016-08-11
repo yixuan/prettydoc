@@ -1,5 +1,5 @@
 ---
-title: "Creating Pretty Documents From R Markdown"
+title: "Creating Pretty Documents from R Markdown"
 subtitle: "The Cayman Theme"
 author: "Yixuan Qiu"
 date: "`r Sys.Date()`"
@@ -8,7 +8,7 @@ output:
     theme: cayman
     highlight: github
 vignette: >
-  %\VignetteIndexEntry{Creating Pretty Documents From R Markdown - Cayman}
+  %\VignetteIndexEntry{Creating Pretty Documents from R Markdown - The Cayman Theme}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

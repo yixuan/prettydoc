@@ -1,5 +1,5 @@
 ---
-title: "Creating Pretty Documents From R Markdown"
+title: "Creating Pretty Documents from R Markdown"
 subtitle: "The Architect Theme"
 author: "Yixuan Qiu"
 date: "`r Sys.Date()`"
@@ -7,7 +7,7 @@ output:
   prettydoc::html_pretty:
     theme: architect
 vignette: >
-  %\VignetteIndexEntry{Creating Pretty Documents From R Markdown - Architect}
+  %\VignetteIndexEntry{Creating Pretty Documents from R Markdown - The Architect Theme}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
