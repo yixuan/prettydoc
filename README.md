@@ -73,16 +73,17 @@ You can also create documents from **prettydoc** templates in RStudio.
 
 ### Options and Themes
 
-The options for the `html_pretty` engine are fully compatible with the default
+The options for the `html_pretty` engine are mostly compatible with the default
 `html_document`
 (see the [documentation](http://rmarkdown.rstudio.com/html_document_format.html))
-with two exceptions:
+with a few exceptions:
 
 1. The `theme` option can take value from `cayman`, `tactile` and
 `architect`. More themes will be added in the future. The themes contained in
 **prettydoc** are much inspired by and modified from
 various [Github page themes](https://github.com/blog/1081-instantly-beautiful-project-pages).
 2. The `highlight` options takes value from `github` and `vignette`.
+3. Options `code_folding` and `toc_float` are not applicable.
 
 ### Gallery
 
