@@ -91,6 +91,10 @@ header h3 {
   min-height: 595px;
 }
 
+.toc li ul {
+  margin-bottom: 0;
+}
+
 .inner {
   width: 840px;
   margin: 0 auto;

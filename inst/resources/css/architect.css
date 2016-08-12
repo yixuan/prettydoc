@@ -339,11 +339,20 @@ header h3 {
   letter-spacing: 0;
 }
 
-.inner {
+.inner, .toc {
   position: relative;
   width: 840px;
   font-size: 1.1em;
   margin: 0 auto;
+}
+
+.toc {
+  padding-top: 1em;
+  padding-bottom: 0;
+}
+
+.toc ul {
+  margin-bottom: 0;
 }
 
 #content-wrapper {
@@ -536,7 +545,7 @@ dl dd {
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 850px) {
-  .inner {
+  .toc, .inner {
     width: 93%;
     font-size: 1em;
   }

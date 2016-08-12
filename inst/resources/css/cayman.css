@@ -179,18 +179,31 @@ a:hover {
   background: #aaa;
   background-image: linear-gradient(to right, #eee, #aaa, #eee);
 }
-.main-content {
+.main-content, .toc {
   max-width: 64rem;
   padding: 2rem 4rem;
   margin: 0 auto;
   font-size: 1.1rem;
 }
+.toc {
+  padding-bottom: 0;
+}
+.toc ul {
+  margin-bottom: 0;
+}
 @media screen and (min-width: 42em) and (max-width: 64em) {
+  .toc {
+    padding: 2rem 2rem 0;
+  }
   .main-content {
     padding: 2rem 2rem;
   }
 }
 @media screen and (max-width: 42em) {
+  .toc {
+    padding: 2rem 1rem 0;
+    font-size: 1rem;
+  }
   .main-content {
     padding: 2rem 1rem;
     font-size: 1rem;
