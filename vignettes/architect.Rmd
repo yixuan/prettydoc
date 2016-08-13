@@ -78,7 +78,7 @@ with a few exceptions:
 `prettydoc` are much inspired by and modified from
 various [Github page themes](https://github.com/blog/1081-instantly-beautiful-project-pages).
 2. The `highlight` options takes value from `github` and `vignette`.
-3. Options `code_folding` and `toc_float` are not applicable.
+3. Options `code_folding`, `code_download` and `toc_float` are not applicable.
 
 ## Elements
 
