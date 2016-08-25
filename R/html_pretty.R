@@ -68,8 +68,6 @@ html_pretty <- function(theme = "cayman",
     ## Final CSS file
     final_css <- tempfile(fileext = ".css")
     file.copy(theme_css, final_css)
-    #file.copy(font_dir, tempdir(), recursive = TRUE)
-    #file.copy(img_dir,  tempdir(), recursive = TRUE)
 
     ## Merge syntax highlight CSS
     if (!is.null(highlight)) {
@@ -113,11 +111,6 @@ html_pretty <- function(theme = "cayman",
     self_contained <- extra_args$self_contained
     clean_supporting <- if(!is.null(self_contained)) self_contained else TRUE
 
-    # deps <- list(resources_css(theme, highlight),
-    #              resources_fonts(),
-    #              resources_images())
-    # deps <- append(deps, extra_args$extra_dependencies)
-
     res <- rmarkdown::output_format(
         knitr = NULL,
         pandoc = NULL,
@@ -133,7 +126,6 @@ html_pretty <- function(theme = "cayman",
                                                css = NULL,
                                                theme = NULL,
                                                highlight = "pygments",
-                                               # extra_dependencies = deps,
                                                ...)
     )
 
