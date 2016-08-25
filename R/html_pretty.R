@@ -68,8 +68,8 @@ html_pretty <- function(theme = "cayman",
     ## Final CSS file
     final_css <- tempfile(fileext = ".css")
     file.copy(theme_css, final_css)
-    file.copy(font_dir, tempdir(), recursive = TRUE)
-    file.copy(img_dir,  tempdir(), recursive = TRUE)
+    #file.copy(font_dir, tempdir(), recursive = TRUE)
+    #file.copy(img_dir,  tempdir(), recursive = TRUE)
 
     ## Merge syntax highlight CSS
     if (!is.null(highlight)) {
@@ -98,11 +98,25 @@ html_pretty <- function(theme = "cayman",
         }
     }
 
+    pre_processor <- function(metadata, input_file, runtime, knit_meta,
+                              files_dir, output_dir) {
+        file.copy(font_dir, files_dir, recursive = TRUE)
+        file.copy(img_dir,  files_dir, recursive = TRUE)
+        doc_css <- file.path(files_dir, "style.css")
+        file.copy(final_css, doc_css, overwrite = TRUE)
+        c("--css", doc_css)
+    }
+
     ## `self_contained` needs to be explicitly specified, otherwise it will be
     ## set to TRUE
     extra_args <- list(...)
     self_contained <- extra_args$self_contained
     clean_supporting <- if(!is.null(self_contained)) self_contained else TRUE
+
+    # deps <- list(resources_css(theme, highlight),
+    #              resources_fonts(),
+    #              resources_images())
+    # deps <- append(deps, extra_args$extra_dependencies)
 
     res <- rmarkdown::output_format(
         knitr = NULL,
@@ -110,14 +124,16 @@ html_pretty <- function(theme = "cayman",
         keep_md = keep_md,
         clean_supporting = clean_supporting,
         pre_knit = pre_knit,
+        pre_processor = pre_processor,
         ## Note that here `theme` and `highlight` are just parameters to make
         ## the HTML document tiny
         ## The real `theme` and `highlight` passed to html_pretty() are
         ## reflected in the final CSS file
         base_format = rmarkdown::html_document(fig_retina = fig_retina,
-                                               css = final_css,
+                                               css = NULL,
                                                theme = NULL,
                                                highlight = "pygments",
+                                               # extra_dependencies = deps,
                                                ...)
     )
 
