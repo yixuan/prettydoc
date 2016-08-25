@@ -98,11 +98,18 @@ html_pretty <- function(theme = "cayman",
         }
     }
 
+    ## `self_contained` needs to be explicitly specified, otherwise it will be
+    ## set to TRUE
+    extra_args <- list(...)
+    self_contained <- extra_args$self_contained
+    clean_supporting <- if(!is.null(self_contained)) self_contained else TRUE
+
     res <- rmarkdown::output_format(
         knitr = NULL,
         pandoc = NULL,
-        pre_knit = pre_knit,
         keep_md = keep_md,
+        clean_supporting = clean_supporting,
+        pre_knit = pre_knit,
         ## Note that here `theme` and `highlight` are just parameters to make
         ## the HTML document tiny
         ## The real `theme` and `highlight` passed to html_pretty() are
