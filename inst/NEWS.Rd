@@ -5,6 +5,8 @@
   \subsection{BUG FIXES}{
     \itemize{
       \item Fixed the alignment of Table of Contents (#3).
+      \item Fixed the incorrect link to CSS file when \code{self_contained} is
+            \code{false} (#4).
     }
   }
 }
