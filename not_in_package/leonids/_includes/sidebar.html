@@ -1,0 +1,8 @@
+{% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
+
+<div class="cover-card table-cell table-middle">
+  <span class="author_name">A simple and awesome blog theme powered by jekyll</span>
+  <span class="author_job">{{ author.job }}</span>
+  <span class="author_bio mbm">The author</span>
+  <span class="author_bio mbm">2016-08-25</span>
+</div>
