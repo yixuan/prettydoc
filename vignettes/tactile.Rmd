@@ -74,10 +74,13 @@ The options for the `html_pretty` engine are mostly compatible with the default
 (see the [documentation](http://rmarkdown.rstudio.com/html_document_format.html))
 with a few exceptions:
 
-1. The `theme` option can take value from `cayman`, `tactile` and
-`architect`. More themes will be added in the future. The themes contained in
-`prettydoc` are much inspired by and modified from
-various [Github page themes](https://github.com/blog/1081-instantly-beautiful-project-pages).
+1. The `theme` option can take value from `cayman`, `tactile`, `architect` and
+`leonids`. The first three themes
+are much inspired by and modified from various
+[Github page themes](https://github.com/blog/1081-instantly-beautiful-project-pages),
+and the last one is derived and modified from the
+[Leonids](https://github.com/renyuanz/leonids) theme.
+More themes will be added in the future. 
 2. The `highlight` options takes value from `github` and `vignette`.
 3. Options `code_folding`, `code_download` and `toc_float` are not applicable.
 

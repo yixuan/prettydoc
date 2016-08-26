@@ -1,14 +1,14 @@
 ---
 title: "Creating Pretty Documents from R Markdown"
-subtitle: "The Cayman Theme"
+subtitle: "The Leonids Theme"
 author: "Yixuan Qiu"
 date: "`r Sys.Date()`"
 output:
   prettydoc::html_pretty:
-    theme: cayman
-    highlight: github
+    theme: leonids
+    highlight: vignette
 vignette: >
-  %\VignetteIndexEntry{Creating Pretty Documents from R Markdown - The Cayman Theme}
+  %\VignetteIndexEntry{Creating Pretty Documents from R Markdown - The Leonids Theme}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
