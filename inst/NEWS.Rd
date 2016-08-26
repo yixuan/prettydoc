@@ -2,6 +2,11 @@
 \title{News for Package "prettydoc"}
 
 \section{Changes in "prettydoc" version 0.1.x}{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item Added the \code{leonids} theme.
+    }
+  }
   \subsection{BUG FIXES}{
     \itemize{
       \item Fixed the alignment of Table of Contents (#3).
