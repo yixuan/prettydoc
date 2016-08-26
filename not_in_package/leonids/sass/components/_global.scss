@@ -39,46 +39,22 @@ td {
 }
 table {
   width: 100%;
-  display: table;
-  &.bordered > thead > tr,
-  &.bordered > tbody > tr {
-    border-bottom: 1px solid $table-border-color;
-  }
-  &.striped > tbody {
-    > tr:nth-child(odd) {
-      background-color: $table-striped-color;
-    }
-    > tr > td {
-      border-radius: 0;
-    }
-  }
-  &.highlight > tbody > tr {
-    @include transition(background-color .25s ease);
-    &:hover {
-      background-color: $table-striped-color;
-    }
-  }
-  &.centered {
-    thead tr th,
-    tbody tr td,
-    tfoot tr td {
-      text-align: center;
-    }
-  }
+  margin: 20px auto;
 }
-thead {
-  border-bottom: 1px solid $table-border-color;
-}
-td,
-th {
-  padding: 15px 5px;
-  display: table-cell;
+th, td {
+  border-bottom: 1px solid #bbbbbb;
   text-align: left;
-  vertical-align: middle;
-  border-radius: 2px;
+  padding: 10px;
 }
-tfoot {
-  border-top: 1px solid $table-border-color;
+th {
+  background-color: #f5a623;
+  color: white;
+}
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+tr:nth-child(even) {
+  background-color: #f5f5f5;
 }
 
 // Global transition
