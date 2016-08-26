@@ -99,24 +99,3 @@ input,
 a {
   @include transition(all .1s ease);
 }
-
-// Footer
-footer {
-  text-align: center;
-  padding: 3em 0;
-  .heart-icon {
-    color: $danger;
-    text-shadow: 0 0 5px $white, 0 0 10px $danger;
-  }
-}
-.related-articles {
-  margin-top: 2em;
-  h4 {
-    font-family: $font-family-base;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-}
