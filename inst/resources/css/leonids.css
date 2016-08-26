@@ -784,7 +784,8 @@ blockquote {
   position: relative;
   padding-left: 20px;
   font-style: italic;
-  border-left: 5px solid #8d7edc; }
+  border-left: 5px solid #8d7edc;
+  font-size: 1.1em; }
 
 a {
   text-decoration: none;

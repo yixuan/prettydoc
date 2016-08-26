@@ -22,10 +22,11 @@ html {
 
 blockquote {
   display: block;
-	position: relative;
+  position: relative;
   padding-left: 20px;
   font-style: italic;
   border-left: 5px solid $secondary;
+  font-size: 1.1em;
 }
 
 //
