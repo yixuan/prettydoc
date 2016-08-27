@@ -94,19 +94,16 @@ a:hover {
   text-align: center;
   margin: 20px auto;
 }
-ul {
-  margin: 2px 0 22px 17px;
+ul, ol {
+  margin: 10px 0 10px 25px;
 }
 ul li {
   list-style-type: circle;
   margin: 0 0 0 0;
   padding: 0 0 4px 5px;
 }
-ol {
-  margin: 8px 0 22px 20px;
-}
 ol li {
-  margin: 0 0 11px 0;
+  margin: 0 0 10px 0;
 }
 #main, #header, #logo, #menubar, #site_content, #footer {
   margin-left: auto;
@@ -203,14 +200,9 @@ ul#menu li a:hover {
   text-align: left;
   margin: 0;
 }
-#content ul {
-  margin: 2px 0 22px 0px;
-}
 #content ul li {
-  list-style-type: none;
-  background: url(bullet.png) no-repeat;
   margin: 0 0 6px 0;
-  padding: 0 0 4px 25px;
+  padding: 0 0 0 10px;
   line-height: 1.5em;
 }
 #footer {
