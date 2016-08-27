@@ -78,11 +78,14 @@ The options for the `html_pretty` engine are mostly compatible with the default
 (see the [documentation](http://rmarkdown.rstudio.com/html_document_format.html))
 with a few exceptions:
 
-1. The `theme` option can take value from `cayman`, `tactile` and
-`architect`. More themes will be added in the future. The themes contained in
-**prettydoc** are much inspired by and modified from
-various [Github page themes](https://github.com/blog/1081-instantly-beautiful-project-pages).
-2. The `highlight` options takes value from `github` and `vignette`.
+1. Currently the `theme` option can take the following values. More themes will
+be added in the future.
+    - `cayman`: Modified from the [Cayman](https://github.com/jasonlong/cayman-theme) theme.
+    - `tactile`: Modified from the [Tactile](https://github.com/jasonlong/tactile-theme) theme.
+    - `architect`: Modified from the [Architect](https://github.com/jasonlong/architect-theme) theme.
+    - `leonids`: Modified from the [Leonids](https://github.com/renyuanz/leonids) theme.
+    - `hpstr`: Modified from the [HPSTR](https://github.com/mmistakes/hpstr-jekyll-theme) theme.
+2. The `highlight` option takes value from `github` and `vignette`.
 3. Options `code_folding`, `code_download` and `toc_float` are not applicable.
 
 ### Gallery
@@ -106,4 +109,16 @@ different themes and syntax highlighters.
 
 <div align="center">
   <img width="600px" src="http://yixuan.cos.name/prettydoc/images/architect.png" alt="Architect Theme" />
+</div>
+
+#### Leonids [(demo page)](http://yixuan.cos.name/prettydoc/leonids.html)
+
+<div align="center">
+  <img width="800px" src="http://yixuan.cos.name/prettydoc/images/leonids.png" alt="Leonids Theme" />
+</div>
+
+#### HPSTR [(demo page)](http://yixuan.cos.name/prettydoc/hpstr.html)
+
+<div align="center">
+  <img width="600px" src="http://yixuan.cos.name/prettydoc/images/hpstr.png" alt="HPSTR Theme" />
 </div>
