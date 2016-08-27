@@ -8,8 +8,8 @@
 #' for more details.
 #'
 #' @param theme Character string to specify the document theme. Currently supported
-#'              themes are \code{"cayman"}, \code{"tactile"}, \code{"architect"}
-#'              and \code{leonids}.
+#'              themes are \code{"cayman"}, \code{"tactile"}, \code{"architect"},
+#'              \code{leonids} and \code{hpstr}.
 #' @param highlight Character string to specify the syntax highlight theme.
 #'                  Supported values are \code{NULL} (use Pandoc default),
 #'                  \code{"github"} and \code{"vignette"}.

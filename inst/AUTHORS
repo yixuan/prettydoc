@@ -1,8 +1,15 @@
-The CSS and image files of the Cayman, Tactile and Architect themes were
-modified from the work of Jason Long (https://github.com/jasonlong/).
+The Cayman, Tactile and Architect themes were modified from the work of
+Jason Long (https://github.com/jasonlong/).
 
 The Leonids theme was modified from the work of Renyuan Zou
 (https://github.com/renyuanz/leonids).
+
+    Copyright (c) 2015 Renyuan Zou
+
+The HPSTR theme was modified from the work of Michael Rose
+(https://github.com/mmistakes/hpstr-jekyll-theme).
+
+    Copyright (c) 2014 Michael Rose
 
 The pandoc template files were modified from the default template
 in rmarkdown package, written by JJ Allaire.

@@ -4,7 +4,7 @@
 \section{Changes in "prettydoc" version 0.1.x}{
   \subsection{NEW FEATURES}{
     \itemize{
-      \item Added the \code{leonids} theme.
+      \item Added the \code{leonids} and \code{hpstr} themes.
     }
   }
   \subsection{BUG FIXES}{

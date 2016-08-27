@@ -1,14 +1,16 @@
 Package: prettydoc
 Type: Package
 Title: Creating Pretty Documents from R Markdown
-Version: 0.1.4
-Date: 2016-08-25
+Version: 0.1.5
+Date: 2016-08-26
 Authors@R: c(
     person("Yixuan", "Qiu", , "yixuan.qiu@cos.name", c("aut", "cre")),
     person("Jason", "Long", , "jlong@github.com", "ctb",
            comment = "the Cayman, Tactile and Architect themes"),
     person("Renyuan", "Zou", , "zourenyuan@gmail.com", "ctb",
            comment = "the Leonids theme"),
+    person("Michael", "Rose", role = "ctb",
+           comment = "the HPSTR theme"),
     person("JJ", "Allaire", , "jj.allaire@gmail.com", "ctb",
            comment = "pandoc template for rmarkdown"),
     person("Hadley", "Wickham", , "h.wickham@gmail.com", "ctb",

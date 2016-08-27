@@ -9,8 +9,8 @@ html_pretty(theme = "cayman", highlight = NULL, css = NULL,
 }
 \arguments{
 \item{theme}{Character string to specify the document theme. Currently supported
-themes are \code{"cayman"}, \code{"tactile"}, \code{"architect"}
-and \code{leonids}.}
+themes are \code{"cayman"}, \code{"tactile"}, \code{"architect"},
+\code{leonids} and \code{hpstr}.}
 
 \item{highlight}{Character string to specify the syntax highlight theme.
 Supported values are \code{NULL} (use Pandoc default),
