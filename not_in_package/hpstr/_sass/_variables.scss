@@ -2,18 +2,29 @@
    SCSS Variables
    ========================================================================== */
 
-/* 
+/*
    Page
    ========================================================================== */
 
-$feature-image-height            : 400px; // min 150px recommended
-$front-page-feature-image-height : 400px; // min 150px recommended
+$feature-image-height            : 300px; // min 150px recommended
+$front-page-feature-image-height : 300px; // min 150px recommended
 
-/* 
+/*
    Typography
    ========================================================================== */
-
-$base-font                       : 'Lato', Calibri, Arial, sans-serif;
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('fonts/open-sans-400.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('fonts/open-sans-700.woff') format('woff');
+}
+$base-font                       : 'Open Sans', 'Lato', Calibri, Arial, sans-serif;
 $heading-font                    : $base-font;
 $caption-font                    : $base-font;
 $code-font                       : monospace;
@@ -29,7 +40,7 @@ body {
   font-size: 0px + $doc-font-size;
 }
 
-/* 
+/*
    Colors
    ========================================================================== */
 
@@ -38,7 +49,7 @@ $body-color                      : #e8e8e8;
 $text-color                      : rgba(#222,0.8);
 $comp-color                      : complement(#222);
 $border-color                    : lighten($base-color,60);
-$link-color                      : rgba(#222,0.8);
+$link-color                      : rgba(#0D45C6,0.8);
 
 $primary                         : #222;
 $success                         : #5cb85c;
@@ -47,7 +58,7 @@ $danger                          : #C64537;
 $info                            : #308cbc;
 
 
-/* 
+/*
    Screen sizes
    ========================================================================== */
 

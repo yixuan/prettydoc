@@ -2,187 +2,37 @@
    Base Elements and Components
    ========================================================================== */
 
-hr { 
-    display: block; 
-    margin: 1em 0; 
+hr {
+    display: block;
+    margin: 1em 0;
     padding: 0;
-    height: 1px; 
-    border: 0; 
+    height: 1px;
+    border: 0;
     border-top: 1px solid #ccc;
-    border-bottom: 1px solid #fff; 
+    border-bottom: 1px solid #fff;
 }
 
-/* 
-   Figures and images
-   ========================================================================== */
-
-figure {
-  margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  @include clearfix();
-
-  img {
-    margin-bottom: 10px;
-  }
-
-  a { 
-
-    img {
-      transform: translate(0, 0);
-      transition-duration: 0.25s;
-
-      &:hover {
-        transform: translate(0, -5px);
-        box-shadow: 0 0 10px rgba($base-color, 0.2);
-      }
-    }
-  }
-
-  /* 2 columns */
-  &.half {
-    @media #{$large} {
-
-      img {
-        width: 310px;
-        float: left;
-        margin-right: 10px;
-      }
-
-      figcaption {
-        clear: left;
-      }
-    }
-  }
-
-  /* 3 columns */
-  &.third {
-    @media #{$large} {
-
-      img {
-        width: 200px;
-        float: left;
-        margin-right: 10px;
-      }
-
-      figcaption {
-        clear: left;
-      }
-    }
-  }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 20px auto;
 }
 
-svg:not(:root) {
-  overflow: hidden; 
+th, td {
+  border-bottom: 1px solid #bbbbbb;
+  text-align: left;
+  padding: 10px;
 }
 
-/* 
-   Buttons
-   ========================================================================== */
-
-.btn {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 8px 20px;
-  @include font-rem(14);
-  background-color: $primary;
-  color: #fff;
-  border-width: 2px !important;
-  border-style: solid !important;
-  border-color: $primary;
-  border-radius: 3px;
-
-  &:visited {
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: #fff;
-    color: $primary;
-  }
+th {
+  background-color: #7887AB;
+  color: white;
 }
 
-.btn-inverse {
-  background-color: #fff;
-  color: $primary;
-  border-color: #fff;
-
-  &:visited {
-    color: $primary;
-  }
-
-  &:hover {
-    background-color: $primary;
-    color: #fff;
-  }
+tr:nth-child(odd) {
+  background-color: #dddddd;
 }
 
-.btn-success {
-  background-color: $success;
-  color: #fff;
-  border-color: $success;
-
-  &:visited {
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: #fff;
-    color: $success;
-  }
-}
-
-.btn-warning {
-  background-color: $warning;
-  color: #fff;
-  border-color: $warning;
-
-  &:visited {
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: #fff;
-    color: $warning;
-  }
-}
-
-.btn-danger {
-  background-color: $danger;
-  color: #fff;
-  border-color: $danger;
-
-  &:visited {
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: #fff;
-    color: $danger;
-  }
-}
-
-.btn-info {
-  background-color: $info;
-  color: #fff;
-  border-color: $info;
-
-  &:visited {
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: #fff;
-    color: $info;
-  }
-}
-
-/* 
-   Wells
-   ========================================================================== */
-
-.well {
-  padding: 20px;
-  border: 1px solid $comp-color;
-  border-radius: 4px;
+tr:nth-child(even) {
+  background-color: #f5f5f5;
 }
