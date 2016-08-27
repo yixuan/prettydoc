@@ -21,3 +21,13 @@ different themes.
   <h3>Architect <a href="architect.html">(Demo Page)</a></h3>
   <img src="images/architect.png" alt="Architect Theme" />
 </div>
+
+<div class="gallery">
+  <h3>Leonids <a href="leonids.html">(Demo Page)</a></h3>
+  <img src="images/leonids.png" alt="Leonids Theme" />
+</div>
+
+<div class="gallery">
+  <h3>HPSTR <a href="hpstr.html">(Demo Page)</a></h3>
+  <img src="images/hpstr.png" alt="HPSTR Theme" />
+</div>

@@ -7,6 +7,13 @@ output:
     highlight: github
 ---
 
+The `prettydoc` package provides an alternative engine, `html_pretty`,
+to knit your R Markdown document into pretty HTML pages.
+Its usage is extremely easy: simply replace the
+`rmarkdown::html_document` or `rmarkdown::html_vignette` output engine by
+`prettydoc::html_pretty` in your R Markdown header, and use one of the built-in
+themes and syntax highlighters.
+
 ## Elements
 
 We demonstrate some commonly used HTML elements here to show the apprearance of
@@ -30,7 +37,7 @@ themes.
 
 Familiar `knitr` R code and plots:
 
-```{r fig.width=6, fig.height=6, fig.align='center'}
+```{r}
 set.seed(123)
 n <- 1000
 x1  <- matrix(rnorm(n), ncol = 2)
