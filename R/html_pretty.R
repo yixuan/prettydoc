@@ -130,6 +130,8 @@ html_pretty <- function(theme = "cayman",
     ## and before Pandoc is called (so we can pass the `css` parameter)
     pre_processor <- function(metadata, input_file, runtime, knit_meta,
                               files_dir, output_dir) {
+        if (!file.exists(files_dir))
+            dir.create(files_dir)
         ## Copy CSS and resources to files_dir
         file.copy(font_dir, files_dir, recursive = TRUE)
         file.copy(img_dir,  files_dir, recursive = TRUE)
@@ -143,7 +145,7 @@ html_pretty <- function(theme = "cayman",
     ## set to TRUE
     extra_args <- list(...)
     self_contained <- extra_args$self_contained
-    clean_supporting <- if(!is.null(self_contained)) self_contained else TRUE
+    clean_supporting <- if (!is.null(self_contained)) self_contained else TRUE
 
     res <- rmarkdown::output_format(
         knitr = NULL,
