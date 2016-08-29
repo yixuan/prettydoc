@@ -1,7 +1,7 @@
 Package: prettydoc
 Type: Package
 Title: Creating Pretty Documents from R Markdown
-Version: 0.1.5
+Version: 0.1.6
 Date: 2016-08-26
 Authors@R: c(
     person("Yixuan", "Qiu", , "yixuan.qiu@cos.name", c("aut", "cre")),

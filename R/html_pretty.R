@@ -22,6 +22,7 @@
 #'                This is the same argument in \code{\link[rmarkdown]{html_vignette}}.
 #' @param readme Use this vignette as the package \file{README.md} file.
 #'               This is the same argument in \code{\link[rmarkdown]{html_vignette}}.
+#' @param compressed_css Whether the compressed CSS should be used.
 #' @param \dots Additional arguments passed to \code{\link[rmarkdown]{html_document}}.
 #'
 #' @return R Markdown output format to pass to \code{\link[rmarkdown]{render}}.
@@ -41,6 +42,7 @@ html_pretty <- function(theme = "cayman",
                         fig_retina = NULL,
                         keep_md = FALSE,
                         readme = FALSE,
+                        compressed_css = TRUE,
                         ...) {
 
 ################################################################################
@@ -78,12 +80,14 @@ html_pretty <- function(theme = "cayman",
 
     ## Obtain theme CSS
     avail_themes <- gsub("\\.css$", "", list.files(css_dir, "\\.css$"))
+    avail_themes <- grep("\\.min$", avail_themes, value = TRUE, invert = TRUE)
     theme <- as.character(theme)
     if (!isTRUE(theme %in% avail_themes)) {
         warning("theme not found, use default (cayman) instead")
         theme <- "cayman"
     }
-    theme_css <- file.path(css_dir, sprintf("%s.css", theme))
+    theme_css <- file.path(css_dir, sprintf("%s%s.css", theme,
+                                            if (isTRUE(compressed_css)) ".min" else ""))
 
     ## Also theme template
     avail_tmpl <- gsub("\\.html$", "", list.files(tmpl_dir, "\\.html$"))

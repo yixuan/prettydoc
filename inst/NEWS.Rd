@@ -5,6 +5,9 @@
   \subsection{NEW FEATURES}{
     \itemize{
       \item Added the \code{leonids} and \code{hpstr} themes.
+      \item New option \code{compressed_css} to allow users selecting between
+            the original CSS and the compressed one processed by
+            \url{http://csscompressor.com/}.
     }
   }
   \subsection{BUG FIXES}{
