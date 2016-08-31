@@ -1,10 +1,10 @@
 \name{NEWS}
 \title{News for Package "prettydoc"}
 
-\section{Changes in "prettydoc" version 0.1.x}{
+\section{Changes in "prettydoc" version 0.2.0}{
   \subsection{NEW FEATURES}{
     \itemize{
-      \item Added the \code{leonids} and \code{hpstr} themes.
+      \item New themes \code{leonids} and \code{hpstr}.
       \item New option \code{compressed_css} to allow users selecting between
             the original CSS and the compressed one processed by
             \url{http://csscompressor.com/}.
