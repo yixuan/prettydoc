@@ -28,7 +28,7 @@ Description: Creating tiny yet beautiful documents and vignettes from R
 Imports:
     rmarkdown (>= 1.0)
 Suggests:
-    knitr, rmarkdown, KernSmooth
+    knitr, KernSmooth
 SystemRequirements: pandoc (>= 1.12.3)
 VignetteBuilder: knitr, rmarkdown
 URL: https://github.com/yixuan/prettydoc
