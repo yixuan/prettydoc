@@ -1,6 +1,14 @@
 \name{NEWS}
 \title{News for Package "prettydoc"}
 
+\section{Changes in "prettydoc" version 0.2.1}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item Fixed errors in building the vignette.
+    }
+  }
+}
+
 \section{Changes in "prettydoc" version 0.2.0}{
   \subsection{NEW FEATURES}{
     \itemize{

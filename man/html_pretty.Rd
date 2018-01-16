@@ -55,4 +55,3 @@ rmarkdown::render(doc, html_pretty(), output_dir = tempdir())
 \author{
 Yixuan Qiu <\url{http://statr.me}>
 }
-
