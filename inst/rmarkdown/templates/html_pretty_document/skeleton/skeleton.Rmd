@@ -11,7 +11,7 @@ output:
 ## A New Output Format
 
 `html_pretty` in the [**prettydoc**](http://github.com/yixuan/prettydoc/)
-package is a new output format for creating HTML document from R Markdown files.
+package is a new output format for creating HTML documents from R Markdown files.
 `html_pretty` is more lightweight compared to `html_document`, and is more
 stylish than `html_vignette` when creating package vignettes.
 
