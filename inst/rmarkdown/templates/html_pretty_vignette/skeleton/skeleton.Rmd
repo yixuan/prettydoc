@@ -15,7 +15,7 @@ vignette: >
 Vignettes are long form documentation commonly included in packages. Because
 they are part of the distribution of the package, they need to be as compact as
 possible. The `html_pretty` output format in package
-[**prettydoc**](http://github.com/yixuan/prettydoc/) , an alternative
+[**prettydoc**](https://github.com/yixuan/prettydoc/) , an alternative
 to `html_document` and `html_vignette` contained in the `rmarkdown` package,
 is able to generate small and nice HTML pages.
 
@@ -71,7 +71,7 @@ knitr::kable(head(iris, 10))
 
 ## Stay Tuned
 
-Please visit the [development page](http://github.com/yixuan/prettydoc/) of the 
+Please visit the [development page](https://github.com/yixuan/prettydoc/) of the 
 `prettydoc` package for latest updates and news. Comments, bug reports and
 pull requests are always welcome.
 

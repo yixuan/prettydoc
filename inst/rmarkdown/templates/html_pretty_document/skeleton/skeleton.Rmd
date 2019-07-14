@@ -10,7 +10,7 @@ output:
 
 ## A New Output Format
 
-`html_pretty` in the [**prettydoc**](http://github.com/yixuan/prettydoc/)
+`html_pretty` in the [**prettydoc**](https://github.com/yixuan/prettydoc/)
 package is a new output format for creating HTML documents from R Markdown files.
 `html_pretty` is more lightweight compared to `html_document`, and is more
 stylish than `html_vignette` when creating package vignettes.
@@ -63,6 +63,6 @@ knitr::kable(head(iris, 10))
 
 ## Stay Tuned
 
-Please visit the [development page](http://github.com/yixuan/prettydoc/) of the 
+Please visit the [development page](https://github.com/yixuan/prettydoc/) of the 
 `prettydoc` package for latest updates and news. Comments, bug reports and
 pull requests are always welcome.
