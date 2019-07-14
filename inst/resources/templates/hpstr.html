@@ -4,9 +4,10 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 $if(theme)$
 $else$
@@ -29,10 +30,6 @@ $endfor$
 
 $if(highlightjs)$
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css"
-      $if(html5)$$else$type="text/css" $endif$/>
-<script src="$highlightjs$/highlight.js"></script>
 $if(theme)$
 <style type="text/css">
   pre:not([class]) {
@@ -41,24 +38,54 @@ $if(theme)$
 </style>
 $endif$
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 $endif$
 
 $if(highlighting-css)$
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 $highlighting-css$
+
 $if(code_folding)$
-div.sourceCode {
-  overflow-x: visible;
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
 }
 $endif$
 </style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 $if(theme)$
 <style type="text/css">
   pre:not([class]) {
@@ -119,9 +146,7 @@ $for(css)$
 <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
 $endfor$
 
-</head>
 
-<body>
 
 $if(theme)$
 <style type = "text/css">
@@ -141,10 +166,43 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
+
+$if(kable-scroll)$
+<style type="text/css">
+.kable-table {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 20px;
+  max-height: 350px;
+}
+
+.kable-table table {
+  margin-bottom: 0px;
+}
+
+.kable-table table>thead>tr>th {
+  border: none;
+  border-bottom: 2px solid #dddddd;
+}
+
+.kable-table table>thead {
+  background-color: #fff;
+}
+</style>
+$endif$
 
 $if(navbar)$
 <style type="text/css">
@@ -158,7 +216,6 @@ body {
   padding-top: $header_padding$px;
   margin-top: -$header_padding$px;
 }
-
 .section h2 {
   padding-top: $header_padding$px;
   margin-top: -$header_padding$px;
@@ -179,6 +236,43 @@ body {
   padding-top: $header_padding$px;
   margin-top: -$header_padding$px;
 }
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
 </style>
 
 <script>
@@ -198,76 +292,73 @@ $$(document).ready(function () {
   menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
-
 $endif$
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script src="$navigationjs$/tabsets.js"></script>
-<script>
-$$(document).ready(function () {
-  window.buildTabsets("$idprefix$TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 $if(code_menu)$
-<script src="$navigationjs$/codefolding.js"></script>
-$if(source_embed)$
-<script src="$navigationjs$/FileSaver.min.js"></script>
-<script src="$navigationjs$/sourceembed.js"></script>
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 $endif$
-<script>
-$$(document).ready(function () {
-$if(source_embed)$
-  window.initializeSourceEmbed("$source_embed$");
-$endif$
-$if(code_folding)$
-  window.initializeCodeFolding("$code_folding$" === "show");
-$endif$
-});
-</script>
-$endif$
-
 
 
 $if(toc_float)$
-
-<script>
-$$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $$('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "$toc_selectors$",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-$if(toc_collapsed)$
-    options.showAndHide = true;
-$else$
-    options.showAndHide = false;
-$endif$
-$if(toc_smooth_scroll)$
-    options.smoothScroll = true;
-$else$
-    options.smoothScroll = false;
-$endif$
-
-    // tocify
-    var toc = $$("#$idprefix$TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -323,8 +414,7 @@ div.tocify {
 }
 
 .tocify-subheader .tocify-item {
-  font-size: 0.9em;
-  padding-left: 5px;
+  font-size: 0.90em;
 }
 
 .tocify .list-group-item {
@@ -338,11 +428,24 @@ $else$
 }
 .tocify-subheader .tocify-item {
   font-size: 0.95em;
-  padding-left: 10px;
 }
 $endif$
 
 </style>
+
+$endif$
+
+$endif$
+
+</head>
+
+<body>
+
+$if(theme)$
+
+<div class="container-fluid main-container">
+
+$if(toc_float)$
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
