@@ -39,6 +39,7 @@
 html_pretty <- function(theme = "cayman",
                         highlight = NULL,
                         css = NULL,
+                        math = c("mathjax", "katex"),
                         fig_retina = NULL,
                         keep_md = FALSE,
                         readme = FALSE,
@@ -76,6 +77,7 @@ html_pretty <- function(theme = "cayman",
     hl_dir   <- system.file("resources", "css", "highlight", package = "prettydoc")
     font_dir <- system.file("resources", "fonts",            package = "prettydoc")
     img_dir  <- system.file("resources", "images",           package = "prettydoc")
+    js_dir   <- system.file("resources", "js",               package = "prettydoc")
     tmpl_dir <- system.file("resources", "templates",        package = "prettydoc")
 
     ## Obtain theme CSS
@@ -101,6 +103,13 @@ html_pretty <- function(theme = "cayman",
     ## directory in the pre_processor() hook
     final_css <- tempfile(fileext = ".css")
     file.copy(theme_css, final_css)
+
+    ## Merge KaTeX CSS if math == "katex"
+    math <- match.arg(math)
+    if (math == "katex") {
+        katex_css <- file.path(css_dir, "katex", "katex.min.css")
+        file.append(final_css, katex_css)
+    }
 
     ## Merge syntax highlight CSS
     if (!is.null(highlight)) {
@@ -136,13 +145,34 @@ html_pretty <- function(theme = "cayman",
                               files_dir, output_dir) {
         if (!file.exists(files_dir))
             dir.create(files_dir)
+
+        pandoc_flags <- c()
+
         ## Copy CSS and resources to files_dir
-        file.copy(font_dir, files_dir, recursive = TRUE)
         file.copy(img_dir,  files_dir, recursive = TRUE)
+        if (math == "katex") {
+            file.copy(font_dir, files_dir, recursive = TRUE)
+            file.copy(js_dir, files_dir, recursive = TRUE)
+            ## Pass files_dir to pandoc template
+            pandoc_flags <- c(pandoc_flags,
+                              "--variable", sprintf("resource-dir=%s", files_dir),
+                              "--variable", "katex")
+        } else {
+            ## Create fonts folder
+            out_font_dir <- file.path(files_dir, "fonts")
+            if (!file.exists(out_font_dir))
+                dir.create(out_font_dir)
+            ## Exclude KaTeX fonts
+            font_files <- grep("^KaTeX_.*", list.files(font_dir), value = TRUE, invert = TRUE)
+            font_files <- file.path(font_dir, font_files)
+            file.copy(font_files, out_font_dir)
+        }
         doc_css <- file.path(files_dir, "style.css")
         file.copy(final_css, doc_css, overwrite = TRUE)
+
         ## Paremeters passed to Pandoc
-        c("--css", doc_css)
+        pandoc_flags <- c(pandoc_flags, "--css", doc_css)
+        pandoc_flags
     }
 
     ## `self_contained` needs to be explicitly specified, otherwise it will be

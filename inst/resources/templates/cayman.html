@@ -437,6 +437,24 @@ $endif$
 
 $endif$
 
+$if(katex)$
+<script src="$resource-dir$/js/katex.min.js"></script>
+<script src="$resource-dir$/js/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            // do not render inside those tags
+            "ignoredTags":["script", "noscript", "style", "textarea", "pre", "code"],
+            // those are the delimiters we are going to use to write latex formulas
+            "delimiters":[
+              {left: "\\[", right: "\\]", display: true},
+              {left: "\\(", right: "\\)", display: false}
+            ]
+        });
+    });
+</script>
+$endif$
+
 </head>
 
 <body>
@@ -560,6 +578,8 @@ $$(document).ready(function () {
 </script>
 $endif$
 
+$if(katex)$
+$else$
 $if(mathjax-url)$
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
@@ -570,6 +590,7 @@ $if(mathjax-url)$
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
+$endif$
 $endif$
 
 </body>
