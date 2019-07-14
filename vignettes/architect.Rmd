@@ -31,11 +31,11 @@ output:
 ---
 ```
 
-The `html_document` engine uses the [Bootswatch](http://bootswatch.com/)
+The `html_document` engine uses the [Bootswatch](https://bootswatch.com/)
 theme library to support different styles of the document.
 This is a quick and easy way to tune the appearance of your document, yet with
 the price of a large file size (> 700KB) since the whole
-[Bootstrap](http://getbootstrap.com/) library needs to be packed in.
+[Bootstrap](https://getbootstrap.com/) library needs to be packed in.
 
 For package vignettes, we can use the `html_vignette` engine to generate
 a more lightweight HTML file that is meant to minimize the package size, but
@@ -70,7 +70,7 @@ output:
 
 The options for the `html_pretty` engine are mostly compatible with the default
 `html_document`
-(see the [documentation](http://rmarkdown.rstudio.com/html_document_format.html))
+(see the [documentation](https://bookdown.org/yihui/rmarkdown/html-document.html))
 with a few exceptions:
 
 1. Currently the `theme` option can take the following values. More themes will
@@ -81,7 +81,37 @@ be added in the future.
     - `leonids`: Modified from the [Leonids](https://github.com/renyuanz/leonids) theme.
     - `hpstr`: Modified from the [HPSTR](https://github.com/mmistakes/hpstr-jekyll-theme) theme.
 2. The `highlight` option takes value from `github` and `vignette`.
-3. Options `code_folding`, `code_download` and `toc_float` are not applicable.
+3. A new `math` parameter to choose between `mathjax` and `katex` for rendering math expressions.
+   The `katex` option supports offline display when there is no internet connection.
+4. Options `code_folding`, `code_download` and `toc_float` are not applicable.
+
+## Offline Math Expressions
+
+By default, `html_pretty` uses MathJax to render math expressions, for example inline math
+expressions $x^2 + y^2 = z^2$, and display formulas:
+
+$$
+f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+However, using MathJax requires an internet connection. If you need to create documents that can
+show math expressions offline, simply add one line `math: katex` to the document metadata:
+
+```yaml
+---
+title: Nineteen Years Later
+author: Harry Potter
+date: July 31, 2016
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    math: katex
+---
+```
+
+This option will enable [KaTeX](https://katex.org/) for rendering the math expressions, and all
+resource files will be included in for offline viewing. The offline document will be ~800k larger.
 
 ## Elements
 
