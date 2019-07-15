@@ -1,8 +1,8 @@
 Package: prettydoc
 Type: Package
 Title: Creating Pretty Documents from R Markdown
-Version: 0.2.1
-Date: 2018-01-15
+Version: 0.3.0
+Date: 2019-07-15
 Authors@R: c(
     person("Yixuan", "Qiu", , "yixuan.qiu@cos.name", c("aut", "cre")),
     person("Jason", "Long", , "jlong@github.com", "ctb",
@@ -18,7 +18,11 @@ Authors@R: c(
     person("Yihui", "Xie", , "xie@yihui.name", "ctb",
            comment = "the html_vignette() function"),
     person("Steve", "Matteson", role = "ctb",
-           comment = "the Open Sans fonts")
+           comment = "the Open Sans fonts"),
+    person("Emily", "Eisenberg", role = "ctb",
+           comment = "the KaTeX library"),
+    person("Sophie", "Alpert", role = "ctb",
+           comment = "the KaTeX library")
     )
 Description: Creating tiny yet beautiful documents and vignettes from R
     Markdown. The package provides the 'html_pretty' output format as an

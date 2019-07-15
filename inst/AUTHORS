@@ -19,4 +19,9 @@ rmarkdown package, written by Hadley Wickham and Yihui Xie.
 
 The Open Sans font files included were designed by Steve Matteson.
 
+The KaTeX library was created by Emily Eisenberg and Sophie Alpert, with code
+from other contributors (https://github.com/KaTeX/KaTeX/graphs/contributors).
+
+    Copyright (c) 2013-2018 Khan Academy
+
 Other part of the package was written by Yixuan Qiu.
