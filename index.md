@@ -7,7 +7,7 @@ documents, like [this page](cayman.html)?
 
 ## Themes for R Markdown
 
-With the powerful [rmarkdown](http://rmarkdown.rstudio.com/index.html)
+With the powerful [rmarkdown](https://rmarkdown.rstudio.com/index.html)
 package, we could easily create nice HTML document
 by adding some meta information in the header, for example
 
@@ -22,15 +22,15 @@ output:
 ---
 ```
 
-The [html_document](http://rmarkdown.rstudio.com/html_document_format.html)
-engine uses the [Bootswatch](http://bootswatch.com/)
+The [html_document](https://bookdown.org/yihui/rmarkdown/html-document.html)
+engine uses the [Bootswatch](https://bootswatch.com/)
 theme library to support different styles of the document.
 This is a quick and easy way to tune the appearance of your document, yet with
 the price of a large file size (> 700KB) since the whole
-[Bootstrap](http://getbootstrap.com/) library needs to be packed in.
+[Bootstrap](https://getbootstrap.com/) library needs to be packed in.
 
 For package vignettes, we can use the
-[html_vignette](http://rmarkdown.rstudio.com/package_vignette_format.html)
+[html_vignette](https://bookdown.org/yihui/rmarkdown/r-package-vignette.html)
 engine to generate a more lightweight HTML file that is meant to minimize the
 package size, but the output HTML is less stylish than the `html_document` ones.
 
@@ -77,7 +77,7 @@ You can also create documents from **prettydoc** templates in RStudio.
 
 The options for the `html_pretty` engine are mostly compatible with the default
 `html_document`
-(see the [documentation](http://rmarkdown.rstudio.com/html_document_format.html))
+(see the [documentation](https://bookdown.org/yihui/rmarkdown/html-document.html))
 with a few exceptions:
 
 1. Currently the `theme` option can take the following values. More themes will
@@ -88,7 +88,9 @@ be added in the future.
     - `leonids`: Modified from the [Leonids](https://github.com/renyuanz/leonids) theme.
     - `hpstr`: Modified from the [HPSTR](https://github.com/mmistakes/hpstr-jekyll-theme) theme.
 2. The `highlight` option takes value from `github` and `vignette`.
-3. Options `code_folding`, `code_download` and `toc_float` are not applicable.
+3. A new `math` parameter to choose between `mathjax` and `katex` for rendering math expressions.
+   The `katex` option supports offline display when there is no internet connection.
+4. Options `code_folding`, `code_download` and `toc_float` are not applicable.
 
 See the [Themes](themes.html) page for an overview of the available themes in
 **prettydoc**.
