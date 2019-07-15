@@ -5,20 +5,24 @@
 \title{Creating Pretty HTML from R Markdown}
 \usage{
 html_pretty(theme = "cayman", highlight = NULL, css = NULL,
-  fig_retina = NULL, keep_md = FALSE, readme = FALSE,
-  compressed_css = TRUE, ...)
+  math = c("mathjax", "katex"), fig_retina = NULL, keep_md = FALSE,
+  readme = FALSE, compressed_css = TRUE, ...)
 }
 \arguments{
 \item{theme}{Character string to specify the document theme. Currently supported
 themes are \code{"cayman"}, \code{"tactile"}, \code{"architect"},
-\code{leonids} and \code{hpstr}.}
+\code{"leonids"}, and \code{"hpstr"}.}
 
 \item{highlight}{Character string to specify the syntax highlight theme.
 Supported values are \code{NULL} (use Pandoc default),
-\code{"github"} and \code{"vignette"}.}
+\code{"github"}, and \code{"vignette"}.}
 
 \item{css}{Additional CSS file to be \strong{merged} in the document. It will
 \strong{NOT} overwrite the CSS from the themes.}
+
+\item{math}{The engine to render math expressions. Possible values are
+\code{"mathjax"} and \code{"katex"}. The \code{katex} engines
+supports offline (no internet connection) rendering of math expressions.}
 
 \item{fig_retina}{The same argument in \code{\link[rmarkdown]{html_document}}
 but with a different default value (\code{NULL} to disable
@@ -42,7 +46,7 @@ This function is an alternative to the \code{\link[rmarkdown]{html_document}}
 and \code{\link[rmarkdown]{html_vignette}} formats to create HTML document
 from R Markdown. It generates small yet pretty HTML pages that are suitable
 for publishing project pages and package vignettes.
-See the \href{http://yixuan.cos.name/prettydoc/}{online documentation}
+See the \href{https://prettydoc.statr.me/}{online documentation}
 for more details.
 }
 \examples{
@@ -53,5 +57,5 @@ rmarkdown::render(doc, html_pretty(), output_dir = tempdir())
 }
 }
 \author{
-Yixuan Qiu <\url{http://statr.me}>
+Yixuan Qiu <\url{https://statr.me}>
 }
