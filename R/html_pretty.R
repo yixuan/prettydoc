@@ -4,7 +4,7 @@
 #' and \code{\link[rmarkdown]{html_vignette}} formats to create HTML document
 #' from R Markdown. It generates small yet pretty HTML pages that are suitable
 #' for publishing project pages and package vignettes.
-#' See the \href{http://yixuan.cos.name/prettydoc/}{online documentation}
+#' See the \href{https://prettydoc.statr.me/}{online documentation}
 #' for more details.
 #'
 #' @param theme Character string to specify the document theme. Currently supported
