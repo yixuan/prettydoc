@@ -9,12 +9,15 @@
 #'
 #' @param theme Character string to specify the document theme. Currently supported
 #'              themes are \code{"cayman"}, \code{"tactile"}, \code{"architect"},
-#'              \code{leonids} and \code{hpstr}.
+#'              \code{"leonids"}, and \code{"hpstr"}.
 #' @param highlight Character string to specify the syntax highlight theme.
 #'                  Supported values are \code{NULL} (use Pandoc default),
-#'                  \code{"github"} and \code{"vignette"}.
+#'                  \code{"github"}, and \code{"vignette"}.
 #' @param css Additional CSS file to be \strong{merged} in the document. It will
 #'                       \strong{NOT} overwrite the CSS from the themes.
+#' @param math The engine to render math expressions. Possible values are
+#'             \code{"mathjax"} and \code{"katex"}. The \code{katex} engines
+#'             supports offline (no internet connection) rendering of math expressions.
 #' @param fig_retina The same argument in \code{\link[rmarkdown]{html_document}}
 #'                   but with a different default value (\code{NULL} to disable
 #'                   retina scaling)
@@ -26,7 +29,7 @@
 #' @param \dots Additional arguments passed to \code{\link[rmarkdown]{html_document}}.
 #'
 #' @return R Markdown output format to pass to \code{\link[rmarkdown]{render}}.
-#' @author Yixuan Qiu <\url{http://statr.me}>
+#' @author Yixuan Qiu <\url{https://statr.me}>
 #' @examples
 #' \dontrun{
 #' doc = system.file("rmarkdown", "templates", "html_pretty_vignette",
