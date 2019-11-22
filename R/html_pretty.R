@@ -14,7 +14,7 @@
 #'                  Supported values are \code{NULL} (use Pandoc default),
 #'                  \code{"github"}, and \code{"vignette"}.
 #' @param css Additional CSS file to be \strong{merged} in the document. It will
-#'                       \strong{NOT} overwrite the CSS from the themes.
+#'            \strong{NOT} overwrite the CSS from the themes.
 #' @param math The engine to render math expressions. Possible values are
 #'             \code{"mathjax"} and \code{"katex"}. The \code{katex} engines
 #'             supports offline (no internet connection) rendering of math expressions.

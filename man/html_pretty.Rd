@@ -4,9 +4,17 @@
 \alias{html_pretty}
 \title{Creating Pretty HTML from R Markdown}
 \usage{
-html_pretty(theme = "cayman", highlight = NULL, css = NULL,
-  math = c("mathjax", "katex"), fig_retina = NULL, keep_md = FALSE,
-  readme = FALSE, compressed_css = TRUE, ...)
+html_pretty(
+  theme = "cayman",
+  highlight = NULL,
+  css = NULL,
+  math = c("mathjax", "katex"),
+  fig_retina = NULL,
+  keep_md = FALSE,
+  readme = FALSE,
+  compressed_css = TRUE,
+  ...
+)
 }
 \arguments{
 \item{theme}{Character string to specify the document theme. Currently supported
