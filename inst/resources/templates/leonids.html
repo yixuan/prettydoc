@@ -53,6 +53,11 @@ $if(highlighting-css)$
 <style type="text/css" data-origin="pandoc">
 $highlighting-css$
 
+/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
+a.sourceLine {
+  pointer-events: auto;
+}
+
 $if(code_folding)$
 .sourceCode .row {
   width: 100%;
