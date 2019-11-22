@@ -1,6 +1,20 @@
 \name{NEWS}
 \title{News for Package "prettydoc"}
 
+\section{Changes in "prettydoc" version 0.3.1}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item \pkg{prettydoc} now depends on \pkg{rmarkdown} >= 1.17 to fix the bug
+            of not properly cleaning temporary files, reported by
+            \href{https://github.com/bernardkaplan}{@bernardkaplan}
+            (\href{https://github.com/yixuan/prettydoc/issues/15}{#15}).
+      \item Fixed a bug caused by Pandoc that makes the code block unselectable,
+            reported by \href{https://github.com/RemPsyc}{@RemPsyc}
+            (\href{https://github.com/yixuan/prettydoc/issues/16}{#16}).
+    }
+  }
+}
+
 \section{Changes in "prettydoc" version 0.3.0}{
   \subsection{NEW FEATURES}{
     \itemize{

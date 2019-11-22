@@ -1,8 +1,8 @@
 Package: prettydoc
 Type: Package
 Title: Creating Pretty Documents from R Markdown
-Version: 0.3.0
-Date: 2019-07-15
+Version: 0.3.1
+Date: 2019-11-22
 Authors@R: c(
     person("Yixuan", "Qiu", , "yixuan.qiu@cos.name", c("aut", "cre")),
     person("Jason", "Long", , "jlong@github.com", "ctb",
@@ -30,7 +30,7 @@ Description: Creating tiny yet beautiful documents and vignettes from R
     convert R Markdown into HTML pages. Various themes and syntax highlight
     styles are supported.
 Imports:
-    rmarkdown (>= 1.0)
+    rmarkdown (>= 1.17)
 Suggests:
     knitr, KernSmooth
 SystemRequirements: pandoc (>= 1.12.3)
