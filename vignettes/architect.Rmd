@@ -115,8 +115,7 @@ resource files will be included in for offline viewing. The offline document wil
 
 ## Elements
 
-We demonstrate some commonly used HTML elements here to show the apprearance of
-themes.
+We demonstrate some commonly used HTML elements here to show the appearance of themes.
 
 ### Headers
 
