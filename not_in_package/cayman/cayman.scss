@@ -22,6 +22,11 @@ $border-color: #dce6f0 !default;
 $table-border-color: #e9ebec !default;
 $hr-border-color: #eff0f1 !default;
 
+//+ Tables
+$table-header-bg-color: $header-bg-color !default;
+$table-header-color: $header-heading-color !default;
+$table-odd-row-bg-color: #f2f2f2 !default;
+
 @mixin large {
   @media screen and (min-width: #{$large-breakpoint}) {
     @content;
@@ -38,6 +43,20 @@ $hr-border-color: #eff0f1 !default;
   @media screen and (max-width: #{$medium-breakpoint}) {
     @content;
   }
+}
+
+//+ Local fonts
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url("fonts/open-sans-400.woff") format("woff");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("fonts/open-sans-700.woff") format("woff");
 }
 
 * {
@@ -62,80 +81,97 @@ a {
   }
 }
 
-.btn {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 0.3rem;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-
-  &:hover {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  + .btn {
-    margin-left: 1rem;
-  }
-
-  @include large {
-    padding: 0.75rem 1rem;
-  }
-
-  @include medium {
-    padding: 0.6rem 0.9rem;
-    font-size: 0.9rem;
-  }
-
-  @include small {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 0.9rem;
-
-    + .btn {
-      margin-top: 1rem;
-      margin-left: 0;
-    }
-  }
-}
+//- No button needed in prettydoc
+//
+// .btn {
+//   display: inline-block;
+//   margin-bottom: 1rem;
+//   color: rgba(255, 255, 255, 0.7);
+//   background-color: rgba(255, 255, 255, 0.08);
+//   border-color: rgba(255, 255, 255, 0.2);
+//   border-style: solid;
+//   border-width: 1px;
+//   border-radius: 0.3rem;
+//   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+//
+//   &:hover {
+//     color: rgba(255, 255, 255, 0.8);
+//     text-decoration: none;
+//     background-color: rgba(255, 255, 255, 0.2);
+//     border-color: rgba(255, 255, 255, 0.3);
+//   }
+//
+//   + .btn {
+//     margin-left: 1rem;
+//   }
+//
+//   @include large {
+//     padding: 0.75rem 1rem;
+//   }
+//
+//   @include medium {
+//     padding: 0.6rem 0.9rem;
+//     font-size: 0.9rem;
+//   }
+//
+//   @include small {
+//     display: block;
+//     width: 100%;
+//     padding: 0.75rem;
+//     font-size: 0.9rem;
+//
+//     + .btn {
+//       margin-top: 1rem;
+//       margin-left: 0;
+//     }
+//   }
+// }
 
 .page-header {
   color: $header-heading-color;
   text-align: center;
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  //+
+  padding: 1.5rem 2rem;
 
-  @include large {
-    padding: 5rem 6rem;
+  //+
+  :last-child {
+    margin-bottom: 0.5rem;
   }
 
-  @include medium {
-    padding: 3rem 4rem;
-  }
+  //-
+  // @include large {
+  //   padding: 5rem 6rem;
+  // }
+
+  //-
+  // @include medium {
+  //   padding: 3rem 4rem;
+  // }
 
   @include small {
-    padding: 2rem 1rem;
+    //M
+    // padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
 }
 
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
+  //+
+  font-size: 2rem;
 
-  @include large {
-    font-size: 3.25rem;
-  }
+  //-
+  // @include large {
+  //   font-size: 3.25rem;
+  // }
 
-  @include medium {
-    font-size: 2.25rem;
-  }
+  //-
+  // @include medium {
+  //   font-size: 2.25rem;
+  // }
 
   @include small {
     font-size: 1.75rem;
@@ -146,14 +182,31 @@ a {
   margin-bottom: 2rem;
   font-weight: normal;
   opacity: 0.7;
+  //+
+  font-size: 1.5rem;
 
-  @include large {
-    font-size: 1.25rem;
-  }
+  //-
+  // @include large {
+  //   font-size: 1.25rem;
+  // }
 
-  @include medium {
-    font-size: 1.15rem;
+  //-
+  // @include medium {
+  //   font-size: 1.15rem;
+  // }
+
+  @include small {
+    //M
+    // font-size: 1rem;
+    font-size: 1.2rem;
   }
+}
+
+//+ Author and date in prettydoc
+.project-author, .project-date {
+  font-weight: normal;
+  opacity: 0.7;
+  font-size: 1.2rem;
 
   @include small {
     font-size: 1rem;
@@ -161,7 +214,11 @@ a {
 }
 
 .main-content {
-  word-wrap: break-word;
+  //-
+  // word-wrap: break-word;
+
+  //+
+  font-size: 1.1rem;
 
   :first-child {
     margin-top: 0;
@@ -169,14 +226,20 @@ a {
 
   @include large {
     max-width: 64rem;
-    padding: 2rem 6rem;
+    //M
+    // padding: 2rem 6rem;
+    padding: 2rem 4rem;
     margin: 0 auto;
-    font-size: 1.1rem;
+    //-
+    // font-size: 1.1rem;
   }
 
   @include medium {
-    padding: 2rem 4rem;
-    font-size: 1.1rem;
+    //M
+    // padding: 2rem 4rem;
+    padding: 2rem;
+    //-
+    // font-size: 1.1rem;
   }
 
   @include small {
@@ -207,7 +270,8 @@ a {
   code {
     padding: 2px 4px;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 0.9rem;
+    //-
+    // font-size: 0.9rem;
     color: $code-text-color;
     background-color: $code-bg-color;
     border-radius: 0.3rem;
@@ -223,37 +287,52 @@ a {
     background-color: $code-bg-color;
     border: solid 1px $border-color;
     border-radius: 0.3rem;
+    //+
+    line-height: 1.45;
+    overflow: auto;
+    
+    //+
+    @include small {
+      font-size: 0.9rem;
+    }
 
     > code {
       padding: 0;
       margin: 0;
-      font-size: 0.9rem;
+      //M
+      // font-size: 0.9rem;
       color: $code-text-color;
       word-break: normal;
       white-space: pre;
       background: transparent;
       border: 0;
+
+      //+
+      @include small {
+        font-size: 0.9rem;
+      }
     }
   }
 
-  .highlight {
-    margin-bottom: 1rem;
+  //- Hightlight in prettydoc is handled separately
+  // .highlight {
+  //   margin-bottom: 1rem;
 
-    pre {
-      margin-bottom: 0;
-      word-break: normal;
-    }
-  }
+  //   pre {
+  //     margin-bottom: 0;
+  //     word-break: normal;
+  //   }
+  // }
 
-  .highlight pre,
-  pre {
-    padding: 0.8rem;
-    overflow: auto;
-    font-size: 0.9rem;
-    line-height: 1.45;
-    border-radius: 0.3rem;
-    -webkit-overflow-scrolling: touch;
-  }
+  // .highlight pre,
+  // pre {
+  //   padding: 0.8rem;
+  //   overflow: auto;
+  //   font-size: 0.9rem;
+  //   line-height: 1.45;
+  //   border-radius: 0.3rem;
+  //   -webkit-overflow-scrolling: touch;
+  // }
 
   pre code,
   pre tt {
@@ -283,6 +362,8 @@ a {
     margin-left: 0;
     color: $blockquote-text-color;
     border-left: 0.3rem solid $border-color;
+    //+
+    font-size: 1.2rem;
 
     > :first-child {
       margin-top: 0;
@@ -291,24 +372,46 @@ a {
     > :last-child {
       margin-bottom: 0;
     }
+
+    //+
+    @include small {
+      font-size: 1.1rem;
+    }
   }
 
   table {
-    display: block;
+    //-
+    // display: block;
     width: 100%;
     overflow: auto;
     word-break: normal;
     word-break: keep-all; // For Firefox to horizontally scroll wider tables.
     -webkit-overflow-scrolling: touch;
+    //+
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1rem 0;
 
     th {
       font-weight: bold;
+      //+
+      background-color: $table-header-bg-color;
+      color: $table-header-color;
     }
 
     th,
     td {
       padding: 0.5rem 1rem;
-      border: 1px solid $table-border-color;
+      //M
+      // border: 1px solid $table-border-color;
+      border-bottom: 1px solid $table-border-color;
+      //+
+      text-align: left;
+    }
+
+    //+
+    tr:nth-child(odd) {
+      background-color: $table-odd-row-bg-color;
     }
   }
 
@@ -337,29 +440,30 @@ a {
   }
 }
 
-.site-footer {
-  padding-top: 2rem;
-  margin-top: 2rem;
-  border-top: solid 1px $hr-border-color;
-
-  @include large {
-    font-size: 1rem;
-  }
-
-  @include medium {
-    font-size: 1rem;
-  }
-
-  @include small {
-    font-size: 0.9rem;
-  }
-}
-
-.site-footer-owner {
-  display: block;
-  font-weight: bold;
-}
-
-.site-footer-credits {
-  color: $blockquote-text-color;
-}
+//- No site footer in prettydoc
+// .site-footer {
+//   padding-top: 2rem;
+//   margin-top: 2rem;
+//   border-top: solid 1px $hr-border-color;
+//
+//   @include large {
+//     font-size: 1rem;
+//   }
+//
+//   @include medium {
+//     font-size: 1rem;
+//   }
+//
+//   @include small {
+//     font-size: 0.9rem;
+//   }
+// }
+//
+// .site-footer-owner {
+//   display: block;
+//   font-weight: bold;
+// }
+//
+// .site-footer-credits {
+//   color: $blockquote-text-color;
+// }
