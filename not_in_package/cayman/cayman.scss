@@ -213,26 +213,50 @@ a {
   }
 }
 
+//+ Shared block for .main-content and .toc
+.main-content, .toc {
+  max-width: 64rem;
+  padding: 2rem 4rem;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+//+ Table of content
+.toc {
+  padding-bottom: 0;
+
+  > ul {
+    padding: 1rem 1rem 1rem 2rem;
+    background-color: $code-bg-color;
+    border: solid 1px $border-color;
+    border-radius: 0.3rem;
+  }
+
+  @include medium {
+    padding: 2rem 2rem 0;
+  }
+
+  @include small {
+    padding: 2rem 1rem 0;
+    font-size: 1rem;
+  }
+}
+
 .main-content {
   //-
   // word-wrap: break-word;
-
-  //+
-  font-size: 1.1rem;
 
   :first-child {
     margin-top: 0;
   }
 
-  @include large {
-    max-width: 64rem;
-    //M
-    // padding: 2rem 6rem;
-    padding: 2rem 4rem;
-    margin: 0 auto;
-    //-
-    // font-size: 1.1rem;
-  }
+  //-
+  // @include large {
+  //   max-width: 64rem;
+  //   padding: 2rem 6rem;
+  //   margin: 0 auto;
+  //   font-size: 1.1rem;
+  // }
 
   @include medium {
     //M
