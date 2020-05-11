@@ -91,11 +91,19 @@ a:hover {
 .toc {
   padding-bottom: 0;
 }
-.toc > ul {
-  padding: 1rem 1rem 1rem 2rem;
+.toc .toc-box {
+  padding: 1.5rem;
   background-color: #f3f6fa;
   border: solid 1px #dce6f0;
   border-radius: 0.3rem;
+}
+.toc .toc-box .toc-title {
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+.toc .toc-box > ul {
+  margin: 0;
+  padding-left: 1.5rem;
 }
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .toc {
