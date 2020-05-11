@@ -225,11 +225,21 @@ a {
 .toc {
   padding-bottom: 0;
 
-  > ul {
-    padding: 1rem 1rem 1rem 2rem;
+  .toc-box {
+    padding: 1.5rem;
     background-color: $code-bg-color;
     border: solid 1px $border-color;
     border-radius: 0.3rem;
+
+    .toc-title {
+      margin: 0 0 0.5rem;
+      text-align: center;
+    }
+
+    > ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
   }
 
   @include medium {
