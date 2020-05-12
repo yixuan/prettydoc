@@ -1,3 +1,38 @@
+// Breakpoints
+$large-breakpoint: 960px !default;
+$medium-breakpoint: 768px !default;
+$small-breakpoint: 480px !default;
+
+@mixin large {
+  @media screen and (min-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin small-or-tiny {
+  @media screen and (max-width: #{$medium-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (min-width: #{$small-breakpoint}) and (max-width: #{$medium-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin tiny {
+  @media screen and (max-width: #{$small-breakpoint}) {
+    @content;
+  }
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -34,12 +69,12 @@ ol, ul {
 	list-style: none;
 }
 blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+  quotes: none;
+
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
 }
 table {
 	border-collapse: collapse;
@@ -58,35 +93,31 @@ body {
 
 a {
   color: #d5000d;
-}
-a:hover {
-  color: #c5000c;
+
+  &:hover {
+    color: #c5000c;
+  }
 }
 
 header {
   padding-top: 35px;
   padding-bottom: 25px;
-}
 
-header h1 {
-  font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; font-weight: 900;
-  letter-spacing: -1px;
-  font-size: 48px;
-  color: #303030;
-  line-height: 1.2;
-}
+  h1 {
+    font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 48px;
+    color: #303030;
+    line-height: 1.2;
+  }
 
-header h2 {
-  letter-spacing: -1px;
-  font-size: 24px;
-  color: #aaa;
-  font-weight: normal;
-  line-height: 1.3;
-}
-
-#container {
-  background: transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
-  min-height: 595px;
+  h2 {
+    letter-spacing: -1px;
+    font-size: 24px;
+    color: #aaa;
+    font-weight: normal;
+    line-height: 1.3;
+  }
 }
 
 .inner {
@@ -94,8 +125,13 @@ header h2 {
   margin: 0 auto;
 }
 
-#container .inner img {
-  max-width: 100%;
+#container {
+  background: transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
+  min-height: 595px;
+
+  .inner img {
+    max-width: 100%;
+  }
 }
 
 #downloads {
@@ -130,26 +166,27 @@ a.button {
   -webkit-box-shadow: 10px 10px 5px #888;
   -moz-box-shadow: 10px 10px 5px #888;
   box-shadow: 0px 1px 5px #e8e8e8;
-}
-a.button:hover {
-  border-top: solid 1px #b7b7b7;
-  border-left: solid 1px #b3b3b3;
-  border-right: solid 1px #b3b3b3;
-  border-bottom: solid 1px #b3b3b3;
-  background: #fafafa; /* Old browsers */
-  background: -moz-linear-gradient(top,  #fdfdfd 0%, #f6f6f6 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f6f6f6)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #fdfdfd 0%,#f6f6f6 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #fdfdfd 0%,#f6f6f6 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #fdfdfd 0%,#f6f6f6 100%); /* IE10+ */
-  background: linear-gradient(top,  #fdfdfd 0%,#f6f6f6, 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
-}
 
-a.button span {
-  padding-left: 50px;
-  display: block;
-  height: 23px;
+  &:hover {
+    border-top: solid 1px #b7b7b7;
+    border-left: solid 1px #b3b3b3;
+    border-right: solid 1px #b3b3b3;
+    border-bottom: solid 1px #b3b3b3;
+    background: #fafafa; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fdfdfd 0%, #f6f6f6 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f6f6f6)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #fdfdfd 0%,#f6f6f6 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #fdfdfd 0%,#f6f6f6 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #fdfdfd 0%,#f6f6f6 100%); /* IE10+ */
+    background: linear-gradient(top,  #fdfdfd 0%,#f6f6f6, 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+  }
+
+  span {
+    padding-left: 50px;
+    display: block;
+    height: 23px;
+  }
 }
 
 #download-zip span {
@@ -184,12 +221,13 @@ pre {
   color: #f2f2f2;
   text-shadow: none;
   overflow: auto;
-}
-pre code {
-  color: #f2f2f2;
-  background-color: #303030;
-  border: none;
-  padding: 0;
+
+  code {
+    color: #f2f2f2;
+    background-color: #303030;
+    border: none;
+    padding: 0;
+  }
 }
 
 ul, ol, dl {
@@ -272,19 +310,19 @@ h5 {
 h6 {
   font-size: .8em;
   color: #303030;
-} 
-
-p {
-  font-weight: 300;
-  margin-bottom: 20px;
 }
  
 a {
   text-decoration: none;
 }
 
-p a {
-  font-weight: 400;
+p {
+  font-weight: 300;
+  margin-bottom: 20px;
+
+  a {
+    font-weight: 400;
+  }
 }
 
 blockquote {
@@ -317,13 +355,14 @@ footer {
   padding-bottom: 30px;
   font-size: 13px;
   color: #aaa;
-}
 
-footer a {
-  color: #666;
-}
-footer a:hover {
-  color: #444;
+  a {
+    color: #666;
+
+    &:hover {
+      color: #444;
+    }
+  }
 }
 
 /* MISC */
@@ -342,14 +381,7 @@ footer a:hover {
 /* #Media Queries
 ================================================== */
 
-/* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) {}
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
-
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {
+@include small-or-tiny {
   header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -365,9 +397,3 @@ footer a:hover {
     margin: 0 auto;
   }
 }
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
