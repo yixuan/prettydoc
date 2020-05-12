@@ -20,6 +20,10 @@ $pre-border-color: #f2f2f2 !default;
 $hr-border-color: #ddd !default;
 $table-border-color: #bbb !default;
 $blockquote-border-color: #e9e9e9 !default;
+$toc-border-color: #dce6f0 !default;
+
+// TOC
+$toc-bg-color: #f3f6fa !default;
 
 // Links
 $link-color: #2879d0 !default;
@@ -252,6 +256,25 @@ ul {
 
 ol {
   list-style: decimal;
+}
+
+.toc {
+  padding-top: 30px;
+
+  .inner {
+    padding: $block-padding;
+    background-color: $toc-bg-color;
+    border: solid 1px $toc-border-color;
+
+    .toc-title {
+      margin: 0 0 $block-margin;
+      text-align: center;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
 }
 
 #content-wrapper {
