@@ -1,6 +1,24 @@
 \name{NEWS}
 \title{News for Package "prettydoc"}
 
+\section{Changes in "prettydoc" version 0.4.0}{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item The \code{cayman} and \code{architect} themes now show a shaded box for
+            the table of contents (TOC).
+      \item Users can specify the title for TOC via the top-level YAML option \code{toc-title}
+            (\href{https://github.com/yixuan/prettydoc/issues/20}{#20}).
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item The \code{cayman} and \code{architect} themes are now developed using
+            \href{https://sass-lang.com/}{Sass} for better element control.
+      \item Tweaks for the \code{cayman} and \code{architect} themes.
+    }
+  }
+}
+
 \section{Changes in "prettydoc" version 0.3.1}{
   \subsection{BUG FIXES}{
     \itemize{
