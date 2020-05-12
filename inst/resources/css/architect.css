@@ -22,7 +22,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #666;
-  background: #fafafa url(images/body-bg.jpg) 0 0 repeat;
+  background-color: #fafafa;
 }
 
 .inner {
