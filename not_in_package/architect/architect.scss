@@ -18,9 +18,8 @@ $content-border-color: #fff !default;
 $code-border-color :#dbe7f3 !default;
 $pre-border-color: #f2f2f2 !default;
 $hr-border-color: #ddd !default;
-$table-border-color: #ebebeb !default;
+$table-border-color: #bbb !default;
 $blockquote-border-color: #e9e9e9 !default;
-$sidebar-border-color: #ddd !default;
 
 // Links
 $link-color: #2879d0 !default;
@@ -32,13 +31,21 @@ $code-bg-color: #f2f8fc !default;
 
 // Preformatted
 $pre-bg-color: #fff !default;
-$pre-code-color: #2879d0 !default;
+$pre-code-color: #3b7abd !default;
 
-// Form
-$form-bg-color: #f2f2f2 !default;
+// Table
+$table-header-color: #fff !default;
+$table-header-bg-color: #63a0e1 !default;
+$table-odd-color: #eee !default;
+$table-even-color: #fff !default;
 
 // Section titles
 $section-title-color: #474747 !default;
+
+// Sizes
+$base-font-size: 16px;
+$block-margin: 16px;
+$block-padding: 20px;
 
 @mixin large {
   @media screen and (min-width: #{$large-breakpoint}) {
@@ -70,126 +77,97 @@ $section-title-color: #474747 !default;
   }
 }
 
-/* LAYOUT STYLES */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url("fonts/open-sans-400.woff") format("woff");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("fonts/open-sans-700.woff") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: $base-font-size;
   font-weight: 400;
   line-height: 1.5;
   color: $body-color;
-  background: $body-bg-color url(../images/body-bg.jpg) 0 0 repeat;
+  background: $body-bg-color url(images/body-bg.jpg) 0 0 repeat;
 }
 
-p {
-  margin-top: 0;
-}
-
-a {
-  color: $link-color;
-
-  &:hover {
-    color: $link-hover-color;
-  }
-
-  &.button {
-    width: 134px;
-    height: 58px;
-    padding-top: 22px;
-    padding-left: 68px;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    font-size: 23px;
-    line-height: 1.2;
-    color: $header-main-color;
-
-    small {
-      display: block;
-      font-size: 11px;
-    }
-  }
+.inner {
+  position: relative;
+  width: 840px;
+  font-size: 1.1em;
+  margin: 0 auto;
 }
 
 header {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  background: $header-bg-color url(../images/header-bg.jpg) 0 0 repeat-x;
+  background: $header-bg-color url(images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px $header-border-color;
+  text-align: center;
 
-  h1 {
-    width: 540px;
-    margin-top: 0;
-    margin-bottom: 0.2em;
-    font-size: 72px;
-    font-weight: normal;
-    line-height: 1;
-    color: $header-main-color;
-    letter-spacing: -1px;
-  }
+  .inner {
+    .title {
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+      font-weight: 700;
+      line-height: 1;
+      color: $header-main-color;
+    }
+  
+    .subtitle {
+      margin-top: 0;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+      font-weight: 400;
+      line-height: 1.3;
+      color: $header-secondary-color;
+    }
+  
+    .author, .date {
+      margin-top: 0;
+      margin-bottom: 0.75em;
+      font-size: 1.2em;
+      font-weight: 400;
+      line-height: 1.2;
+      color: $header-secondary-color;
+    }
 
-  h2 {
-    width: 540px;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 26px;
-    font-weight: normal;
-    line-height: 1.3;
-    color: $header-secondary-color;
-    letter-spacing: 0;
-  }
-
-  a.button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: transparent url(../images/github-button.png) 0 0 no-repeat;
-  }
-}
-
-.inner {
-  position: relative;
-  width: 940px;
-  margin: 0 auto;
-}
-
-#content-wrapper {
-  padding-top: 30px;
-  border-top: solid 1px $content-border-color;
-}
-
-aside {
-  &#sidebar {
-    float: right;
-    width: 200px;
-    min-height: 504px;
-    padding-left: 20px;
-    font-size: 12px;
-    line-height: 1.3;
-    background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
-
-    p.repo-owner,
-    p.repo-owner a {
-      font-weight: bold;
+    :last-child {
+      margin-bottom: 0.0;
     }
   }
-
-  a.button {
-    display: block;
-    width: 138px;
-    padding-left: 64px;
-    margin-bottom: 20px;
-    font-size: 21px;
-    background: transparent url(../images/download-button.png) 0 0 no-repeat;
-  }
 }
 
-#downloads {
-  margin-bottom: 40px;
+p {
+  margin: $block-margin 0;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
 }
 
 code, pre {
-  margin-bottom: 30px;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 13px;
+  font-family: Consolas, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: $code-color;
 }
 
@@ -200,11 +178,13 @@ code {
 }
 
 pre {
-  padding: 20px;
+  margin: $block-margin 0;
+  padding: $block-padding;
   overflow: auto;
   text-shadow: none;
   background: $pre-bg-color;
   border: solid 1px $pre-border-color;
+  font-size: 0.9em;
 
   code {
     padding: 0;
@@ -214,46 +194,74 @@ pre {
   }
 }
 
-ul, ol, dl {
-  margin-bottom: 20px;
-}
-
-
-/* COMMON STYLES */
-
 hr {
   height: 0;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: $block-margin 0;
   border: 0;
   border-top: solid 1px $hr-border-color;
 }
 
 table {
   width: 100%;
-  border: 1px solid $table-border-color;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all; // For Firefox to horizontally scroll wider tables.
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: $block-margin 0;
+
+  th {
+    font-weight: 700;
+    background-color: $table-header-bg-color;
+    color: $table-header-color;
+  }
+
+  th, td {
+    border-bottom: 1px solid $table-border-color;
+    text-align: left;
+    padding: 10px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: $table-odd-color;
+  }
+
+  tr:nth-child(even) {
+    background-color: $table-even-color;
+  }
 }
 
-th {
-  font-weight: 500;
+blockquote {
+  padding: 0 0 0 $block-padding;
+  margin-top: $block-margin;
+  margin-bottom: $block-margin;
+  font-size: 1.1em;
+  border-left: 10px solid $blockquote-border-color;
 }
 
-td {
-  font-weight: 300;
-  text-align: center;
-  border: 1px solid $table-border-color;
+ul, ol {
+  list-style-position: inside;
+  margin-top: 0;
+  padding-left: 30px;
 }
 
-form {
-  padding: 20px;
-  background: $form-bg-color;
+ul {
+  list-style: disc;
 }
 
+ol {
+  list-style: decimal;
+}
 
-/* GENERAL ELEMENT TYPE STYLES */
+#content-wrapper {
+  padding-top: 30px;
+}
+
 #main-content {
-  float: left;
-  width: 690px;
+  > :first-child {
+    margin-top: 0;
+  }
 
   img {
     max-width: 100%;
@@ -262,16 +270,14 @@ form {
   h1 {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    font-size: 2.8em;
-    font-weight: normal;
+    font-size: 2em;
+    font-weight: 700;
     color: $section-title-color;
-    text-indent: 6px;
     letter-spacing: -1px;
   
     &:before {
       padding-right: 0.3em;
-      margin-left: -0.9em;
+      margin-left: -0.8em;
       color: $header-secondary-color;
       content: "/";
     }
@@ -279,15 +285,13 @@ form {
 
   h2 {
     margin-bottom: 8px;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 1.5em;
+    font-weight: 700;
     color: $section-title-color;
-    text-indent: 4px;
 
     &:before {
       padding-right: 0.3em;
-      margin-left: -1.5em;
+      margin-left: -1.2em;
       content: "//";
       color: $header-secondary-color;
     }
@@ -296,15 +300,13 @@ form {
   h3 {
     margin-top: 24px;
     margin-bottom: 8px;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 1.2em;
+    font-weight: 700;
     color: $section-title-color;
-    text-indent: 3px;
 
     &:before {
       padding-right: 0.3em;
-      margin-left: -2em;
+      margin-left: -1.7em;
       content: "///";
       color: $header-secondary-color;
     }
@@ -312,15 +314,13 @@ form {
 
   h4 {
     margin-bottom: 8px;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 1.1em;
+    font-weight: 700;
     color: $section-title-color;
-    text-indent: 3px;
 
     &:before {
       padding-right: 0.3em;
-      margin-left: -2.8em;
+      margin-left: -2em;
       content: "////";
       color: $header-secondary-color;
     }
@@ -328,14 +328,12 @@ form {
 
   h5 {
     margin-bottom: 8px;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    font-size: 14px;
+    font-size: 1em;
     color: $section-title-color;
-    text-indent: 3px;
 
     &:before {
       padding-right: 0.3em;
-      margin-left: -3.2em;
+      margin-left: -2.4em;
       content: "/////";
       color: $header-secondary-color;
     }
@@ -343,54 +341,16 @@ form {
 
   h6 {
     margin-bottom: 8px;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    font-size: .8em;
+    font-size: .9em;
     color: $section-title-color;
-    text-indent: 3px;
 
     &:before {
       padding-right: 0.3em;
-      margin-left: -3.7em;
+      margin-left: -3em;
       content: "//////";
       color: $header-secondary-color;
     }
   }
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-a {
-  text-decoration: none;
-}
-
-p a {
-  font-weight: 400;
-}
-
-blockquote {
-  padding: 0 0 0 30px;
-  margin-bottom: 20px;
-  font-size: 1.6em;
-  border-left: 10px solid $blockquote-border-color;
-}
-
-ul {
-  list-style-position: inside;
-  list-style: disc;
-  padding-left: 20px;
-}
-
-ol {
-  list-style-position: inside;
-  list-style: decimal;
-  padding-left: 3px;
-}
-
-dl dd {
-  font-style: italic;
-  font-weight: 100;
 }
 
 /* MISC */
@@ -406,102 +366,64 @@ dl dd {
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
 
-/* #Media Queries
-================================================== */
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
 @include medium {
   .inner {
     width: 740px;
   }
-  header h1, header h2 {
-    width: 340px;
-  }
-  header h1 {
-    font-size: 60px;
-  }
-  header h2 {
-    font-size: 30px;
-  }
+
   #main-content {
-    width: 490px;
-  }
-  #main-content h1:before,
-  #main-content h2:before,
-  #main-content h3:before,
-  #main-content h4:before,
-  #main-content h5:before,
-  #main-content h6:before {
-    padding-right: 0;
-    margin-left: 0;
-    content: none;
+    h1:before,
+    h2:before,
+    h3:before,
+    h4:before,
+    h5:before,
+    h6:before {
+      padding-right: 0;
+      margin-left: 0;
+      content: none;
+    }
   }
 }
 
-/* All Mobile Sizes (devices and browser) */
 @include small-or-tiny {
   .inner {
     width: 93%;
   }
+
   header {
     padding: 20px 0;
+
+    .inner {
+      position: relative;
+
+      .title, .subtitle {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 1.75em;
+      }
+
+      .subtitle {
+        font-size: 1.2em;
+      }
+
+      .author, .date {
+        font-size: 1em;
+      }
+    }
   }
-  header .inner {
-    position: relative;
-  }
-  header h1, header h2 {
-    width: 100%;
-  }
-  header h1 {
-    font-size: 48px;
-  }
-  header h2 {
-    font-size: 24px;
-  }
-  header a.button {
-    position: relative;
-    display: inline-block;
-    width: auto;
-    height: auto;
-    padding: 5px 10px;
-    margin-top: 15px;
-    font-size: 13px;
-    line-height: 1;
-    color: $link-color;
-    text-align: center;
-    background-color: $header-secondary-color;
-    background-image: none;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-  }
-  header a.button small {
-    display: inline;
-    font-size: 13px;
-  }
-  #main-content,
-  aside#sidebar {
-    float: none;
-    width: 100% ! important;
-  }
-  aside#sidebar {
-    min-height: 0;
-    padding: 20px 0;
-    margin-top: 20px;
-    background-image: none;
-    border-top: solid 1px $sidebar-border-color;
-  }
-  aside#sidebar a.button {
-    display: none;
-  }
-  #main-content h1:before,
-  #main-content h2:before,
-  #main-content h3:before,
-  #main-content h4:before,
-  #main-content h5:before,
-  #main-content h6:before {
-    padding-right: 0;
-    margin-left: 0;
-    content: none;
+
+  #main-content {
+    h1:before,
+    h2:before,
+    h3:before,
+    h4:before,
+    h5:before,
+    h6:before {
+      padding-right: 0;
+      margin-left: 0;
+      content: none;
+    }
   }
 }
