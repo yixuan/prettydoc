@@ -7,11 +7,17 @@ output:
   prettydoc::html_pretty:
     theme: tactile
     highlight: vignette
+    toc: true
+toc-title: "Table of Contents"
 vignette: >
   %\VignetteIndexEntry{Creating Pretty Documents from R Markdown - The Tactile Theme}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev.args = list(type = "cairo"))
+```
 
 > Have you ever tried to find a lightweight yet nice theme for the R Markdown
 documents, just like this page?
