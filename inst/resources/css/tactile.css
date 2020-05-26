@@ -1,48 +1,44 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url('fonts/open-sans-400.woff') format('woff');
+  src: local("Open Sans"), local("OpenSans"), url("fonts/open-sans-400.woff") format("woff");
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('fonts/open-sans-700.woff') format('woff');
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("fonts/open-sans-700.woff") format("woff");
 }
 * {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
   border: 0;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+
 blockquote, q {
   quotes: none;
+  margin: 16px 0;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* LAYOUT STYLES */
 body {
   font-size: 16px;
   line-height: 1.5;
-  background: #e7e7e7 url('images/body-bg.png') 0 0 repeat;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #e5e5e5;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   color: #606060;
 }
@@ -55,44 +51,41 @@ a:hover {
 }
 
 header {
-  padding-top: 35px;
-  padding-bottom: 25px;
+  padding: 30px 0;
   text-align: center;
 }
-
 header h1 {
   font-weight: 700;
   letter-spacing: -1px;
   font-size: 2em;
   color: #303030;
   line-height: 1.2;
-  margin-bottom: 0.5em;
+  margin: 0 0 0.5em;
 }
-
 header h2 {
-  letter-spacing: -1px;
   font-size: 1.5em;
-  color: #aaa;
-  font-weight: normal;
+  color: #d5000d;
+  font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 1em;
+  margin: 0 0 1em;
 }
-
 header h3 {
-  letter-spacing: -1px;
   font-size: 1.2em;
   color: #6d6d6d;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+header :last-child {
+  margin-bottom: 0;
 }
 
 #container {
-  background: transparent url('images/highlight-bg.jpg') 50% 0 no-repeat;
+  background: transparent url(images/highlight-bg.jpg) 50% 0 no-repeat;
   min-height: 595px;
 }
-
-.toc li ul {
-  margin-bottom: 0;
+#container .inner img {
+  max-width: 100%;
 }
 
 .inner {
@@ -101,20 +94,28 @@ header h3 {
   font-size: 1.1em;
 }
 
-#container .inner img {
-  max-width: 100%;
+.toc {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  border: solid 1px #bbb;
+}
+.toc .toc-title {
+  margin: 0 0 16px;
+  text-align: center;
+  color: #666;
+}
+.toc ul {
+  margin: 0;
 }
 
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", Consolas, "Lucida Console", Terminal, Courier, monospace;
   background-color: #f2f2f2;
   color: #303030;
-  margin-bottom: 30px;
-  font-size: 1em;
 }
 
 code {
-  background-color: #f2f2f2;
   border: solid 1px #ddd;
   padding: 0 3px;
 }
@@ -124,19 +125,12 @@ pre {
   text-shadow: none;
   overflow: auto;
   font-size: 0.9em;
+  margin-bottom: 16px;
 }
-
 pre code {
   border: none;
   padding: 0;
 }
-
-ul, ol, dl {
-  margin-bottom: 20px;
-}
-
-
-/* COMMON STYLES */
 
 hr {
   height: 1px;
@@ -149,7 +143,7 @@ hr {
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 em {
@@ -158,35 +152,34 @@ em {
 
 table {
   width: 100%;
-  margin: 20px auto;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 16px 0;
 }
-
-th, td {
-  border-bottom: 1px solid #bbbbbb;
+table th {
+  font-weight: 700;
+  background-color: #a2000a;
+  color: #fff;
+}
+table th, table td {
+  border-bottom: 1px solid #bbb;
   text-align: left;
   padding: 10px;
 }
-
-th {
-  background-color: #a2000a;
-  color: white;
+table tr:nth-child(odd) {
+  background-color: #ddd;
 }
-
-tr:nth-child(odd) {
-  background-color: #dddddd;
-}
-
-tr:nth-child(even) {
+table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-form {
-  background: #f2f2f2;
-  padding: 20px;
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 16px;
 }
-
-
-/* GENERAL ELEMENT TYPE STYLES */
 
 h1 {
   font-size: 2em;
@@ -196,98 +189,81 @@ h2 {
   font-size: 1.5em;
   font-weight: bold;
   color: #303030;
-  margin-bottom: 8px;
 }
 
 h3 {
-  color: #d5000d;
   font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 8px;
+  color: #d5000d;
 }
 
 h4 {
   font-size: 1.1em;
-  color: #303030;
   font-weight: bold;
-  margin-bottom: 8px;
+  color: #303030;
 }
 
 h5 {
   font-size: 1em;
   color: #303030;
-  margin-bottom: 8px;
 }
 
 h6 {
   font-size: 0.9em;
   color: #303030;
-  margin-bottom: 8px;
-}
-
-p {
-  font-weight: normal;
-  margin-bottom: 20px;
 }
 
 a {
   text-decoration: none;
 }
 
+p {
+  font-weight: 400;
+  margin-bottom: 16px;
+}
 p a {
-  font-weight: normal;
+  font-weight: 400;
 }
 
 blockquote {
   font-size: 1.1em;
   color: #819198;
   border-left: 10px solid #d0d0d0;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   padding: 0 0 0 30px;
 }
 
 ol, ul {
-    padding-left: 2em;
+  padding-left: 2em;
 }
 
-dl dt {
-  color: #303030;
-}
-
-footer {
-  background: transparent;
-  margin-top: 40px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  font-size: 13px;
-  color: #aaa;
-}
-
-footer a {
-  color: #666;
-}
-footer a:hover {
-  color: #444;
-}
-
-/* MISC */
 .clearfix:after {
   clear: both;
-  content: '.';
+  content: ".";
   display: block;
   visibility: hidden;
   height: 0;
 }
 
-.clearfix {display: inline-block;}
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
+.clearfix {
+  display: inline-block;
+}
 
-/* #Media Queries
-================================================== */
+* html .clearfix {
+  height: 1%;
+}
 
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 850px) {
+.clearfix {
+  display: block;
+}
+
+@media screen and (max-width: 860px) {
+  .inner {
+    width: 94%;
+    font-size: 1em;
+    margin: 0 auto;
+  }
+
   header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -299,11 +275,12 @@ footer a:hover {
     font-size: 1.2em;
   }
   header h3 {
-  font-size: 1em;
-  }
-  .inner {
-    width: 94%;
     font-size: 1em;
-    margin: 0 auto;
+  }
+
+  .toc {
+    width: 80%;
   }
 }
+
+/*# sourceMappingURL=tactile.css.map */
