@@ -148,6 +148,23 @@ header {
   font-size: 1.1em;
 }
 
+.toc {
+  width: 60%;
+  margin: 0 auto;
+  padding: $block-padding;
+  border: solid 1px #bbb;
+
+  .toc-title {
+    margin: 0 0 $block-margin;
+    text-align: center;
+    color: #666;
+  }
+
+  ul {
+    margin: 0;
+  }
+}
+
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", Consolas, "Lucida Console", Terminal, Courier, monospace;
   background-color: #f2f2f2;
@@ -326,5 +343,9 @@ ol, ul {
     h3 {
       font-size: 1em;
     }
+  }
+
+  .toc {
+    width: 80%;
   }
 }
