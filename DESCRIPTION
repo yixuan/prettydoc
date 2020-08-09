@@ -2,7 +2,7 @@ Package: prettydoc
 Type: Package
 Title: Creating Pretty Documents from R Markdown
 Version: 0.4.0
-Date: 2020-05-12
+Date: 2020-08-09
 Authors@R: c(
     person("Yixuan", "Qiu", , "yixuan.qiu@cos.name", c("aut", "cre")),
     person("Jason", "Long", , "jlong@github.com", "ctb",
@@ -40,4 +40,4 @@ BugReports: https://github.com/yixuan/prettydoc/issues
 License: Apache License (>= 2.0)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
