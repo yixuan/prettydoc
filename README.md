@@ -84,7 +84,7 @@ be added in the future.
     - `tactile`: Modified from the [Tactile](https://github.com/jasonlong/tactile-theme) theme.
     - `architect`: Modified from the [Architect](https://github.com/jasonlong/architect-theme) theme.
     - `leonids`: Modified from the [Leonids](https://github.com/renyuanz/leonids) theme.
-    - `hpstr`: Modified from the [HPSTR](https://github.com/mmistakes/hpstr-jekyll-theme) theme.
+    - `hpstr`: Modified from the [HPSTR](https://github.com/mmistakes/jekyll-theme-hpstr) theme.
 2. The `highlight` option takes value from `github` and `vignette`.
 3. A new `math` parameter to choose between `mathjax` and `katex` for rendering math expressions.
    The `katex` option supports offline display when there is no internet connection.

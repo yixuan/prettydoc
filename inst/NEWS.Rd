@@ -59,7 +59,7 @@
       \item New themes \code{leonids} and \code{hpstr}.
       \item New option \code{compressed_css} to allow users selecting between
             the original CSS and the compressed one processed by
-            \url{http://csscompressor.com/}.
+            \url{https://csscompressor.com/}.
     }
   }
   \subsection{BUG FIXES}{
