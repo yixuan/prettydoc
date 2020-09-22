@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+<html$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 $if(theme)$
 $else$
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 $endif$
 
 $for(author-meta)$
@@ -166,7 +165,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -343,6 +341,7 @@ $endif$
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -377,14 +376,18 @@ $if(toc_float)$
 }
 }
 
+@media print {
 $if(toc_print)$
 $else$
-@media print {
 #$idprefix$TOC {
   display: none !important;
 }
-}
 $endif$
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -591,11 +594,93 @@ $endif$
 
 <script>
 
-// add bootstrap table styles to pandoc tables
-$$(document).ready(function () {
+  // add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
   $$('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
 
+$if(kable-scroll)$
+$$(document).ready(function () {
+  $$('.knitsql-table').addClass('kable-table');
+  var container = $$('.kable-table');
+  container.each(function() {
+
+    // move the caption out of the table
+    var table = $$(this).children('table');
+    var caption = table.children('caption').detach();
+    caption.insertBefore($$(this)).css('display', 'inherit');
+  });
+});
+$endif$
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$$(document).ready(function () {
+  window.buildTabsets("$idprefix$TOC");
+});
+
+$$(document).ready(function () {
+  $$('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $$(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+$endif$
+
+<!-- code folding -->
+$if(code_menu)$
+<script>
+$$(document).ready(function () {
+$if(source_embed)$
+  window.initializeSourceEmbed("$source_embed$");
+$endif$
+$if(code_folding)$
+  window.initializeCodeFolding("$code_folding$" === "show");
+$endif$
+});
+</script>
+$endif$
+
+$if(toc_float)$
+<script>
+$$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $$('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "$toc_selectors$",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+$if(toc_collapsed)$
+    options.showAndHide = true;
+$else$
+    options.showAndHide = false;
+$endif$
+$if(toc_smooth_scroll)$
+    options.smoothScroll = true;
+$else$
+    options.smoothScroll = false;
+$endif$
+
+    // tocify
+    var toc = $$("#$idprefix$TOC").tocify(options).data("toc-tocify");
+});
 </script>
 $endif$
 
