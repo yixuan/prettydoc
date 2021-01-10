@@ -1,0 +1,41 @@
+/*
+ *
+ *  HPSTR
+ *
+ *  Designer: Michael Rose
+ *  Twitter: http://twitter.com/mmistakes
+ *
+*/
+
+// Partials
+@import "_sass/variables";
+@import "_sass/mixins";
+@import "_sass/reset";
+@import "_sass/site";
+@import "_sass/typography";
+@import "_sass/syntax";
+@import "_sass/grid";
+@import "_sass/elements";
+@import "_sass/page";
+
+// Table of contents
+.toc {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: solid 1px #bbb;
+
+  .toc-title {
+    margin: 0 0 16px;
+    text-align: center;
+    color: #666;
+  }
+
+  ul, li {
+    margin: 0;
+  }
+
+  @media #{$medium} {
+    width: 60%;
+  }
+}

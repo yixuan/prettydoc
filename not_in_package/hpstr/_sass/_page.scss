@@ -161,13 +161,14 @@ body {
    ========================================================================== */
 
 .entry-content {
-    margin: 40px 2px 20px 2px;
+    margin: 10px 2px 10px 2px;
     padding: 10px 15px;
     background-color: #fff;
     box-shadow: 0 0 0 0, 0 6px 12px rgba(#000,0.1);
     border-radius: 3px;
 
     @media #{$medium} {
+        margin-top: 10px;
         margin-left: 10px;
         margin-right: 10px;
         padding: 20px 30px;
