@@ -15,7 +15,8 @@ vignette: >
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(dev.args = list(type = "cairo"))
+if(capabilities("cairo"))
+    knitr::opts_chunk$set(dev.args = list(type = "cairo"))
 ```
 
 > Have you ever tried to find a lightweight yet nice theme for the R Markdown

@@ -7,11 +7,18 @@ output:
   prettydoc::html_pretty:
     theme: hpstr
     highlight: github
+    toc: true
+toc-title: "Table of Contents"
 vignette: >
   %\VignetteIndexEntry{Creating Pretty Documents from R Markdown - The HPSTR Theme}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+```{r setup, include=FALSE}
+if(capabilities("cairo"))
+    knitr::opts_chunk$set(dev.args = list(type = "cairo"))
+```
 
 > Have you ever tried to find a lightweight yet nice theme for the R Markdown
 documents, just like this page?
