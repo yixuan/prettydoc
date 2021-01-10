@@ -1,6 +1,25 @@
 \name{NEWS}
 \title{News for Package "prettydoc"}
 
+\section{Changes in "prettydoc" version 0.4.1}{
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item Added the table of contents box to the \code{hpstr} theme.
+      \item Added the \code{toc-title} option to the \code{hpstr} theme,
+            thanks to \href{https://github.com/marlycormar}{@marlycormar}
+            (\href{https://github.com/yixuan/prettydoc/pull/23}{#23}).
+    }
+  }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item Fixed the validity of HTML templates for the \code{hpstr} and \code{leonids}
+            themes, reported by \href{https://github.com/grady}{@grady}
+            (\href{https://github.com/yixuan/prettydoc/issues/22}{#22}).
+      \item Tweaks for the \code{hpstr} theme.
+    }
+  }
+}
+
 \section{Changes in "prettydoc" version 0.4.0}{
   \subsection{NEW FEATURES}{
     \itemize{
