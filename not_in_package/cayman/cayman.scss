@@ -256,7 +256,7 @@ a {
   //-
   // word-wrap: break-word;
 
-  :first-child {
+  > :first-child {
     margin-top: 0;
   }
 
