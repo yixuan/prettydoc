@@ -81,17 +81,38 @@ $block-padding: 20px;
   }
 }
 
+//+ Local fonts
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("Open Sans"), local("OpenSans"), url("fonts/open-sans-400.woff") format("woff");
+  src: local("Open Sans Regular"),
+       local("OpenSans-Regular"),
+       url("fonts/open-sans-v18-latin-ext_latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Open Sans Italic"),
+       local("OpenSans-Italic"),
+       url("fonts/open-sans-v18-latin-ext_latin-italic.woff2") format("woff2");
 }
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("fonts/open-sans-700.woff") format("woff");
+  src: local("Open Sans Bold"),
+       local("OpenSans-Bold"),
+       url("fonts/open-sans-v18-latin-ext_latin-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Open Sans Bold Italic"),
+       local("OpenSans-BoldItalic"),
+       url("fonts/open-sans-v18-latin-ext_latin-700italic.woff2") format("woff2");
 }
 
 * {
@@ -132,7 +153,7 @@ header {
       line-height: 1;
       color: $header-main-color;
     }
-  
+
     .subtitle {
       margin-top: 0;
       margin-bottom: 1em;
@@ -141,7 +162,7 @@ header {
       line-height: 1.3;
       color: $header-secondary-color;
     }
-  
+
     .author, .date {
       margin-top: 0;
       margin-bottom: 0.75em;
@@ -297,7 +318,7 @@ ol {
     font-weight: 700;
     color: $section-title-color;
     letter-spacing: -1px;
-  
+
     &:before {
       padding-right: 0.3em;
       margin-left: -0.8em;
